@@ -16,7 +16,7 @@ module.exports = function(app)
     // }
 
     if(process.env.WEB_CONCURRENCY){
-        connectionString = process.env.PROD_MONGODB;
+        connectionString = process.env.MONGODB_URI;
     }
 
 
