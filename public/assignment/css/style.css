@@ -1,7 +1,96 @@
 input.form-control {
     margin-bottom: 5px;
 }
-
+/*
+Base contents
+*/
 body {
-    padding-top: 36px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.navbar-brand.navbrand {
+    font-family: 'Arima Madurai', cursive;
+    /*font-weight: bold;*/
+    font-size: x-large;
+    color: white;
+    margin-left: 15px;
+}
+
+.nav-sidebar {
+    display: none;
+}
+
+.inverse-sidebar {
+    padding-right: 0;
+    padding-left: 0;
+}
+/*.navbar-plus{*/
+    /*padding-right: 15px;*/
+/*}*/
+.navbar-inverse {
+    background-color: #7b080c;
+    border: none;
+}
+.navbar-inverse .navbar-link {
+    color: #ffffff;
+}
+div.navbar-text.pull-left {
+    margin-left: 0;
+}
+
+.navbar-brand.navbrand {
+    color: white;
+    margin-left: 15px;
+}
+.navbar-brand.navbrand.no-mar {
+    margin-left: 0;
+}
+
+
+/*
+Sidebar
+*/
+.sidebar{
+    display:none;
+}
+@media (min-width: 768px) {
+    .sidebar {
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .nav-sidebar {
+        display: block;
+    }
+
+    .inverse-sidebar {
+        padding-right: 0;
+        padding-left: 40px;
+    }
+
+}
+
+.list-group-item{
+    border:None;
+}
+.no-padding-left{
+    padding-left: 0;
+}
+.no-padding-right{
+    padding-right: 0;
+}
+
+.form-control{
+    border-color: #7b080c;
+    outline: 0 none;
+}
+.form-control:focus{
+    border-color: #7b080c;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(123, 8, 12, 0.5);
+}
+
+div.form-group label{
+    font-size: large;
 }
