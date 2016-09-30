@@ -11,52 +11,114 @@
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class = "navbar-text no-padding pull-left">
-            <a href="page-list.html" class = "navbar-link">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-        </div>
+<div class="container-fluid">
+    <div class="navbar-text no-padding pull-left">
+        <a href="page-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left">
+                    </span>
+        </a>
+    </div>
 
+    <div class="nav-sidebar no-padding col-sm-4 col-md-3">
         <div class="navbar-header pull-left">
             <a class="navbar-brand navbrand">
-                New Page
+                Page
             </a>
         </div>
-
         <p class="navbar-text pull-right">
-            <a href="page-list.html" class="navbar-link">
-                        <span class="glyphicon glyphicon-ok">
+            <a href="website-new.html" class="navbar-link">
+                        <span class="glyphicon glyphicon-plus">
                         </span>
             </a>
         </p>
     </div>
-</nav>
-
-<div class="container">
-    <form>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input id="name"
-                   type="text"
-                   class="form-control"
-                   placeholder="Page Name">
+    <div class="col-sm-6 col-md-7 no-padding">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand navbrand">
+                New Pages
+            </a>
         </div>
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title"
-                   type="text"
-                   class="form-control"
-                   placeholder="Page Title">
-        </div>
-    </form>
+    </div>
+    <div class="navbar-text pull-right">
+        <a href="page-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-ok">
+                    </span>
+        </a>
+    </div>
 </div>
+</nav>
+<div class="container-fluid">
+    <div class="no-padding no-padding-right sidebar col-sm-4 col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="page-list.html">
+                    Address Book App
+                </a>
+                <p class="pull-right">
+                    <a href="website-edit.html">
+                            <span class="glyphicon glyphicon-cog">
+                            </span>
+                    </a>
+                </p>
+            </li>
 
+            <li class="list-group-item">
+                <a href="page-list.html">
+                    Blogger
+                </a>
+                <p class="pull-right">
+                    <a href="website-edit.html">
+                            <span class="glyphicon glyphicon-cog">
+                            </span>
+                    </a>
+                </p>
+            </li>
 
+            <li class="list-group-item">
+                <a href="page-list.html">
+                    Blogging App
+                </a>
+                <p class="pull-right">
+                    <a href="website-edit.html">
+                            <span class="glyphicon glyphicon-cog">
+                            </span>
+                    </a>
+                </p>
+            </li>
 
-
-
-
+            <li class="list-group-item">
+                <a href="page-list.html">
+                    Script Testing App
+                </a>
+                <p class="pull-right">
+                    <a href="website-edit.html">
+                            <span class="glyphicon glyphicon-cog">
+                            </span>
+                    </a>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-8 col-md-9 inverse-sidebar">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name"
+                       type="text"
+                       class="form-control"
+                       placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description"
+                          class="form-control"
+                          rows="5"
+                          placeholder="Description">
+                    </textarea>
+            </div>
+        </form>
+    </div>
+</div>
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">

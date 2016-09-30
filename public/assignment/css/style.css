@@ -17,6 +17,26 @@ body {
     margin-left: 15px;
 }
 
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    z-index: 0;
+}
+
+.youtube-widget iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
 .nav-sidebar {
     display: none;
 }
@@ -91,6 +111,36 @@ Sidebar
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(123, 8, 12, 0.5);
 }
 
-div.form-group label{
+div.form-group label {
     font-size: large;
+}
+
+
+/*Widget part*/
+.widget-editor{
+    position: absolute;
+    right: 15px;
+    background: white;
+    border-bottom-left-radius: 8px;
+    /*opacity: 0.7;*/
+    padding-bottom: 5px;
+    padding-left: 5px;
+    z-index: 1;
+}
+
+img{
+    border-radius: 8px;
+    height:auto;
+}
+
+
+.lotr{
+    font-family:"Century Schoolbook L";
+}
+
+.fa{
+    font-size: 36px;
+}
+.a{
+    font-size: larger;
 }
