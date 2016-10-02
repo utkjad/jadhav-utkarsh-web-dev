@@ -11,7 +11,6 @@ body {
 
 .navbar-brand.navbrand {
     font-family: 'Arima Madurai', cursive;
-    /*font-weight: bold;*/
     font-size: x-large;
     color: white;
     margin-left: 15px;
@@ -19,7 +18,7 @@ body {
 
 .youtube-widget {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     z-index: 0;
 }
@@ -32,11 +31,6 @@ body {
     height: 100%;
 }
 
-
-
-
-
-
 .nav-sidebar {
     display: none;
 }
@@ -45,9 +39,6 @@ body {
     padding-right: 0;
     padding-left: 0;
 }
-/*.navbar-plus{*/
-    /*padding-right: 15px;*/
-/*}*/
 .navbar-inverse {
     background-color: #7b080c;
     border: none;
@@ -115,7 +106,6 @@ div.form-group label {
     font-size: large;
 }
 
-
 /*Widget part*/
 .widget-editor{
     position: absolute;
@@ -132,15 +122,10 @@ img{
     border-radius: 8px;
     height:auto;
 }
-
-
 .lotr{
     font-family:"Century Schoolbook L";
 }
 
 .fa{
     font-size: 36px;
-}
-.a{
-    font-size: larger;
 }
