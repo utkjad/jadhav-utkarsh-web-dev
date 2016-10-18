@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Appmaker - widget-youtube</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:900" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class = "navbar-text no-padding pull-left">
@@ -33,9 +21,7 @@
     </div>
 </nav>
 
-
 <div class="container-fluid">
-
     <div class="inverse-sidebar">
         <form>
             <div class="form-group">
@@ -49,23 +35,16 @@
                 <label for="text">Text</label>
                 <input id="text"
                        type="text"
+                       class="form-control"
                        placeholder="Text"
-                       class="form-control">
+                       >
             </div>
             <div class="form-group">
-                <label for="url">URL</label>
-                <input id="url"
-                       type="url"
+                <label for="size">Size</label>
+                <input id="size"
+                       type="number"
                        class="form-control"
-                       placeholder="URL"
-                       value="">
-            </div>
-            <div class="form-group">
-                <label for="width">Width</label>
-                <input id="width"
-                       type="text"
-                       placeholder="Width"
-                       class="form-control"
+                       placeholder="Size"
                        value="">
             </div>
         </form>
@@ -79,12 +58,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="profile.html" class="navbar-link">
+            <a href="../views/user/profile.html" class="navbar-link">
                     <span class="glyphicon glyphicon-user">
                     </span>
             </a>
         </p>
     </div>
 </nav>
-</body>
-</html>

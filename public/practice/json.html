@@ -1,0 +1,25 @@
+<h1> JSON </h1>
+<script>
+    var alice = {
+        "firstName": "Alice",
+        "lastName": "Wonderland",
+        "salary": 123454567909876543
+    };
+
+    console.log(alice);
+
+    var department = {
+        name: "COmputer Science",
+        dean: alice,
+        courses: [
+            {title: "CS5610"},
+            {title: "ABBBA"}
+        ]
+    }
+    console.log(department);
+    console.log(JSON.stringify(department));
+
+    var u = '{"name":"COmputer Science","dean":{"firstName":"Alice","lastName":"Wonderland","salary":123454567909876540},"courses":[{"title":"CS5610"},{"title":"ABBBA"}]}'
+
+    var obj = JSON.parse(u);
+</script>

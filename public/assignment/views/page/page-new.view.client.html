@@ -1,62 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Website</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:900" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-text no-padding pull-left">
-            <a href="website-list.html" class="navbar-link">
+<div class="container-fluid">
+    <div class="navbar-text no-padding pull-left">
+        <a href="page-list.html" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left">
                     </span>
+        </a>
+    </div>
+
+    <div class="nav-sidebar no-padding col-sm-4 col-md-3">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand navbrand">
+                Page
             </a>
         </div>
-
-        <div class="nav-sidebar no-padding col-sm-4 col-md-3">
-            <div class="navbar-header pull-left">
-                <a class="navbar-brand navbrand">
-                    Websites
-                </a>
-            </div>
-            <p class="navbar-text pull-right navbar-plus">
-                <a href="website-new.html" class="navbar-link">
+        <p class="navbar-text pull-right">
+            <a href="../website/website-new.html" class="navbar-link">
                         <span class="glyphicon glyphicon-plus">
                         </span>
-                </a>
-            </p>
-        </div>
-        <div class="col-sm-6 col-md-7 no-padding">
-            <div class="navbar-header pull-left">
-                <a class="navbar-brand navbrand">
-                    Edit Website
-                </a>
-            </div>
-        </div>
-        <div class="navbar-text pull-right">
-            <a href="website-list.html" class="navbar-link">
-                    <span class="glyphicon glyphicon-ok">
-                    </span>
+            </a>
+        </p>
+    </div>
+    <div class="col-sm-6 col-md-7 no-padding">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand navbrand">
+                New Pages
             </a>
         </div>
     </div>
+    <div class="navbar-text pull-right">
+        <a href="page-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-ok">
+                    </span>
+        </a>
+    </div>
+</div>
 </nav>
-
 <div class="container-fluid">
-    <div class="no-padding-left no-padding-right sidebar col-sm-4 col-md-3">
+    <div class="no-padding no-padding-right sidebar col-sm-4 col-md-3">
         <ul class="list-group">
             <li class="list-group-item">
                 <a href="page-list.html">
                     Address Book App
                 </a>
                 <p class="pull-right">
-                    <a href="website-edit.html">
+                    <a href="../website/website-edit.html">
                             <span class="glyphicon glyphicon-cog">
                             </span>
                     </a>
@@ -68,7 +55,7 @@
                     Blogger
                 </a>
                 <p class="pull-right">
-                    <a href="website-edit.html">
+                    <a href="../website/website-edit.html">
                             <span class="glyphicon glyphicon-cog">
                             </span>
                     </a>
@@ -80,7 +67,7 @@
                     Blogging App
                 </a>
                 <p class="pull-right">
-                    <a href="website-edit.html">
+                    <a href="../website/website-edit.html">
                             <span class="glyphicon glyphicon-cog">
                             </span>
                     </a>
@@ -92,7 +79,7 @@
                     Script Testing App
                 </a>
                 <p class="pull-right">
-                    <a href="website-edit.html">
+                    <a href="../website/website-edit.html">
                             <span class="glyphicon glyphicon-cog">
                             </span>
                     </a>
@@ -103,14 +90,14 @@
     <div class="col-sm-8 col-md-9 inverse-sidebar">
         <form>
             <div class="form-group">
-                <label for="name">Website Name</label>
+                <label for="name">Name</label>
                 <input id="name"
                        type="text"
                        class="form-control"
                        placeholder="Name">
             </div>
             <div class="form-group">
-                <label for="description">Website Description</label>
+                <label for="description">Description</label>
                 <textarea id="description"
                           class="form-control"
                           rows="5"
@@ -118,22 +105,16 @@
                     </textarea>
             </div>
         </form>
-        <a href="website-list.html" class ="btn btn-block btn-danger">
-            Delete
-        </a>
-
     </div>
 </div>
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="profile.html" class="navbar-link">
+            <a href="../user/profile.html" class="navbar-link">
                     <span class="glyphicon glyphicon-user">
                     </span>
             </a>
         </p>
     </div>
 </nav>
-</body>
-</html>

@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>AppMaker page-edit</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:900" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text no-padding pull-left">
-            <a href="page-list.html" class="navbar-link">
+            <a href="website-list.html" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left">
                     </span>
             </a>
@@ -21,11 +10,11 @@
         <div class="nav-sidebar no-padding col-sm-4 col-md-3">
             <div class="navbar-header pull-left">
                 <a class="navbar-brand navbrand">
-                    Pages
+                    Websites
                 </a>
             </div>
             <p class="navbar-text pull-right navbar-plus">
-                <a href="page-list.html" class="navbar-link">
+                <a href="website-new.html" class="navbar-link">
                         <span class="glyphicon glyphicon-plus">
                         </span>
                 </a>
@@ -34,7 +23,7 @@
         <div class="col-sm-6 col-md-7 no-padding">
             <div class="navbar-header pull-left">
                 <a class="navbar-brand navbrand">
-                    Edit Page
+                    Edit Website
                 </a>
             </div>
         </div>
@@ -46,11 +35,12 @@
         </div>
     </div>
 </nav>
+
 <div class="container-fluid">
     <div class="no-padding-left no-padding-right sidebar col-sm-4 col-md-3">
         <ul class="list-group">
             <li class="list-group-item">
-                <a href="page-list.html">
+                <a href="../page/page-list.html">
                     Address Book App
                 </a>
                 <p class="pull-right">
@@ -62,7 +52,7 @@
             </li>
 
             <li class="list-group-item">
-                <a href="page-list.html">
+                <a href="../page/page-list.html">
                     Blogger
                 </a>
                 <p class="pull-right">
@@ -74,7 +64,7 @@
             </li>
 
             <li class="list-group-item">
-                <a href="page-list.html">
+                <a href="../page/page-list.html">
                     Blogging App
                 </a>
                 <p class="pull-right">
@@ -86,7 +76,7 @@
             </li>
 
             <li class="list-group-item">
-                <a href="page-list.html">
+                <a href="../page/page-list.html">
                     Script Testing App
                 </a>
                 <p class="pull-right">
@@ -98,18 +88,17 @@
             </li>
         </ul>
     </div>
-
     <div class="col-sm-8 col-md-9 inverse-sidebar">
         <form>
             <div class="form-group">
-                <label for="name">Page Name</label>
+                <label for="name">Website Name</label>
                 <input id="name"
                        type="text"
                        class="form-control"
                        placeholder="Name">
             </div>
             <div class="form-group">
-                <label for="description">Page Description</label>
+                <label for="description">Website Description</label>
                 <textarea id="description"
                           class="form-control"
                           rows="5"
@@ -117,26 +106,20 @@
                     </textarea>
             </div>
         </form>
-        <a href="page-list.html" class ="btn btn-block btn-danger">
+        <a href="website-list.html" class ="btn btn-block btn-danger">
             Delete
         </a>
 
     </div>
 </div>
 
-
-
-
-
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="profile.html" class="navbar-link">
+            <a href="../user/profile.html" class="navbar-link">
                     <span class="glyphicon glyphicon-user">
                     </span>
             </a>
         </p>
     </div>
 </nav>
-</body>
-</html>
