@@ -22,55 +22,14 @@
     </nav>
 
     <div class="container-fluid">
-        {{websites}}
+        {{model.websites}}
     <ul class="list-group">
-        <li class = "list-group-item" ng-repeat = "website in websites">
-            <a href="../page/page-list.html">
+        <li class = "list-group-item" ng-repeat = "website in model.websites">
+            <a href="#">
                 {{website.name}}
             </a>
             <p class="pull-right">
-                <a href= "#/website/{{website._id}}" >
-                           <!--"website-edit.html">-->
-                    <span class="glyphicon glyphicon-cog">
-                    </span>
-                </a>
-
-            </p>
-        </li>
-
-        <li class = "list-group-item">
-            <a href="../page/page-list.html">
-                Blogger
-            </a>
-            <p class="pull-right">
-                <a href="website-edit.html">
-                    <span class="glyphicon glyphicon-cog">
-                    </span>
-                </a>
-
-            </p>
-        </li>
-
-
-        <li class = "list-group-item">
-            <a href="../page/page-list.html">
-                Blooging App
-            </a>
-            <p class="pull-right">
-                <a href="website-edit.html">
-                    <span class="glyphicon glyphicon-cog">
-                    </span>
-                </a>
-
-            </p>
-        </li>
-
-        <li class = "list-group-item">
-            <a href="../page/page-list.html">
-                Script testing App
-            </a>
-            <p class="pull-right">
-                <a href="website-edit.html">
+                <a href= "#/user/{{model.userID}}/website/{{website._id}}" >
                     <span class="glyphicon glyphicon-cog">
                     </span>
                 </a>

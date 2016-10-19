@@ -3,15 +3,16 @@
         .module("WebAppMaker")
         .controller("WebsiteListController",WebsiteListController );
 
-        function WebsiteListController($scope) {
-            var websites = [
-                {"name": "pushpinder", "_id": 123},
-                {"name": "utkarsh", "_id": 456}
-            ];
+        function WebsiteListController($routeParams, WebsiteService) {
+            var vm = this;
+            vm.userID = $routeParams.uid;
 
-            $scope.websites = websites;
-            console.log("welcome to WebsiteListController");
+            function init() {
+                //pushpinder bhai kaa advice lagalo. kaam ayega
+
+                vm.websites = WebsiteService.findWebsitesForUser(vm.userID);
+            }
+            init();
         }
-
     }
 )();

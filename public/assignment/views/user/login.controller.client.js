@@ -3,28 +3,30 @@
             .module('WebAppMaker')
             .controller('LoginController', LoginController);
 
-        function LoginController() {
+        function LoginController($location, UserService) {
             var vm = this;
-            vm.login = function(username, password) {
-                console.log(username, password);
-                var found = false;
-                var users = [
-                    {username :"utk", password: 'qwe'},
-                    {username :"utk3", password: 'qwe'},
-                    {username :"utk2", password: 'qwe'}
-                ];
-                for (var u in users){
-                    var user = users[u];
-                    if (user.username === username && user.password === password){
-                        console.log("found user");
-                        found = true;
-                        break;
-                    }
+            vm.login = login;
+            vm.register = register;
+
+            function init() {
+                console.log("LoginController loaded");
+            }
+            init();
+
+            function login (user) {
+                var user = UserService.findUserByCredentials(user.username, user.password);
+                if (user){
+                    $location.url("user/" + user._id);
+                } else{
+                    vm.alert = "User not found";
                 }
-                if (!found ){
-                    console.log("not found");
-                    vm.error = "NOT FOUND USER";
-                }
+            }
+
+            function register() {
+                $location.url("/register");
             }
         }
     })();
+
+
+

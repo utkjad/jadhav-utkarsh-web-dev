@@ -1,17 +1,25 @@
-{{model.error}}
-<div class="container">
+
+<div class="container-fluid">
+    <div ng-if="model.alert" class="alert alert-danger alert-dismissible" role="alert">
+        <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Attention!</strong> {{model.alert}}
+    </div>
     <h1>Login</h1>
     <input type="text"
-           ng-model = "model.username"
+           ng-model = "model.user.username"
            class="form-control"
            placeholder="username"/>
     <input type="password"
-           ng-model="model.password"
+           ng-model="model.user.password"
            class="form-control"
            placeholder="password"/>
-    <a class="btn btn-primary btn-block"
-       ng-click="model.login(model.username, model.password)"
-       href="#/profile">Login</a>
-    <a class="btn btn-success btn-block"
-       href="#/register">Register</a>
+    <a ng-click="model.login(model.user)"
+       class="btn btn-primary btn-block">
+        Login
+    </a>
+
+    <a ng-click="model.register()"
+       class="btn btn-success btn-block">
+        Register
+    </a>
 </div>
