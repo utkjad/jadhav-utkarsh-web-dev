@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid">
     <div class="navbar-text no-padding pull-left">
-        <a href="page-list.html" class="navbar-link">
+        <a ng-click = "model.back()" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left">
                     </span>
         </a>
@@ -14,21 +14,20 @@
             </a>
         </div>
         <p class="navbar-text pull-right">
-            <a href="../website/website-new.html" class="navbar-link">
-                        <span class="glyphicon glyphicon-plus">
-                        </span>
+            <a ng-click = "model.newPage()" class="navbar-link">
+                        <span class="glyphicon glyphicon-plus"></span>
             </a>
         </p>
     </div>
     <div class="col-sm-6 col-md-7 no-padding">
         <div class="navbar-header pull-left">
             <a class="navbar-brand navbrand">
-                New Pages
+                New Page
             </a>
         </div>
     </div>
     <div class="navbar-text pull-right">
-        <a href="page-list.html" class="navbar-link">
+        <a ng-click = "model.createPage(model.page)" class="navbar-link">
                     <span class="glyphicon glyphicon-ok">
                     </span>
         </a>
@@ -38,67 +37,43 @@
 <div class="container-fluid">
     <div class="no-padding no-padding-right sidebar col-sm-4 col-md-3">
         <ul class="list-group">
-            <li class="list-group-item">
-                <a href="page-list.html">
-                    Address Book App
+            <li ng-repeat= "page in model.pages" class="list-group-item">
+                <a ng-click = "model.openPage(page)">
+                    {{page.name}}
                 </a>
                 <p class="pull-right">
-                    <a href="../website/website-edit.html">
-                            <span class="glyphicon glyphicon-cog">
-                            </span>
-                    </a>
-                </p>
-            </li>
-
-            <li class="list-group-item">
-                <a href="page-list.html">
-                    Blogger
-                </a>
-                <p class="pull-right">
-                    <a href="../website/website-edit.html">
-                            <span class="glyphicon glyphicon-cog">
-                            </span>
-                    </a>
-                </p>
-            </li>
-
-            <li class="list-group-item">
-                <a href="page-list.html">
-                    Blogging App
-                </a>
-                <p class="pull-right">
-                    <a href="../website/website-edit.html">
-                            <span class="glyphicon glyphicon-cog">
-                            </span>
-                    </a>
-                </p>
-            </li>
-
-            <li class="list-group-item">
-                <a href="page-list.html">
-                    Script Testing App
-                </a>
-                <p class="pull-right">
-                    <a href="../website/website-edit.html">
-                            <span class="glyphicon glyphicon-cog">
-                            </span>
+                    <a ng-click = "model.editPage(page)">
+                            <span class="glyphicon glyphicon-cog"></span>
                     </a>
                 </p>
             </li>
         </ul>
     </div>
     <div class="col-sm-8 col-md-9 inverse-sidebar">
+
+        <div ng-if="model.alert" class="alert alert-danger alert-dismissible" role="alert">
+            <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Failure!</strong> {{model.alert}}
+        </div>
+
+        <div ng-if="model.success" class="alert alert-success alert-dismissible" role="alert">
+            <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Success!</strong> {{model.success}}
+        </div>
+
         <form>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input id="name"
+                <input ng-model = "model.page.name"
+                       id="name"
                        type="text"
                        class="form-control"
                        placeholder="Name">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description"
+                <textarea ng-model = "model.page.description"
+                          id="description"
                           class="form-control"
                           rows="5"
                           placeholder="Description">
@@ -111,9 +86,8 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="../user/profile.html" class="navbar-link">
-                    <span class="glyphicon glyphicon-user">
-                    </span>
+            <a ng-click = "model.profile()" class="navbar-link">
+                    <span class="glyphicon glyphicon-user"></span>
             </a>
         </p>
     </div>

@@ -11,6 +11,7 @@
             {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
         ];
 
+
         var api = {
             createUser: createUser,
             findUserByID: findUserByID,
@@ -31,12 +32,13 @@
                 lastName: user.lastName
             };
             users.push(newUser);
+            return newUser;
         }
 
         function findUserByID(userId) {
             for (var u in users){
                 user = users[u];
-                if (user._id ===  parseInt(userId)){
+                if (parseInt(user._id) ===  parseInt(userId)){
                     return user;
                 }
             }
@@ -67,7 +69,7 @@
         function updateUser(userId, user) {
             for (var u in users){
                 currentUser = users[u];
-                if (currentUser._id ===  parseInt(userId)){
+                if (parseInt(currentUser._id) ===  parseInt(userId)){
                     currentUser.firstName = user.firstName;
                     currentUser.lastName = user.lastName;
                     currentUser.email = user.email;
@@ -80,7 +82,7 @@
         function deleteUser(userId) {
             for (var i in users){
                 user = users[i];
-                if (user._id ===  parseInt(userId)){
+                if (parseInt(user._id) ===  parseInt(userId)){
                     users.splice(i, 1);
                 }
             }

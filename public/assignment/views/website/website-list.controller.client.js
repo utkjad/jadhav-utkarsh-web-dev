@@ -1,18 +1,43 @@
 ( function () {
-    angular
-        .module("WebAppMaker")
-        .controller("WebsiteListController",WebsiteListController );
+        angular
+            .module("WebAppMaker")
+            .controller("WebsiteListController",WebsiteListController );
 
-        function WebsiteListController($routeParams, WebsiteService) {
+        function WebsiteListController($location, $routeParams, WebsiteService) {
             var vm = this;
-            vm.userID = $routeParams.uid;
+            vm.userId = $routeParams.uid;
+            vm.profile = profile;
+            vm.editWebsite = editWebsite;
+            vm.openWebsite = openWebsite;
+            vm.newWebsite = newWebsite;
+            vm.back = back;
 
             function init() {
-                //pushpinder bhai kaa advice lagalo. kaam ayega
-
-                vm.websites = WebsiteService.findWebsitesForUser(vm.userID);
+                console.log("WebsiteListController loaded");
+                vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
             }
             init();
+
+            function back(){
+                $location.url("/user/" + vm.userId);
+            }
+
+            function newWebsite() {
+                $location.url("/user/" + vm.userId + "/website/new");
+            }
+
+            function openWebsite(website){
+                $location.url("/user/" + vm.userId + "/website/" + website._id + "/page");
+            }
+
+
+            function editWebsite(website){
+                $location.url("/user/" + vm.userId + "/website/" + website._id);
+            }
+
+            function profile(){
+                $location.url("/user/" + vm.userId);
+            }
         }
     }
 )();

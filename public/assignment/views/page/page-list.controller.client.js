@@ -1,3 +1,44 @@
-/**
- * Created by lumos on 10/18/16.
- */
+(function () {
+    angular
+        .module("WebAppMaker")
+        .controller("PageListController", PageListController);
+    function PageListController($routeParams, $location,  PageService) {
+        var vm = this;
+        vm.back = back;
+        vm.clear = clear;
+        vm.profile = profile;
+        vm.editPage = editPage;
+        vm.newPage = newPage;
+        vm.openPage = openPage;
+
+        vm.userId = $routeParams["uid"];
+        vm.websiteId = $routeParams["wid"];
+
+        function init() {
+            console.log("PageListController loaded");
+            vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
+        }
+        init();
+
+        function openPage(page) {
+            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + page._id + "/widget");
+        }
+        function newPage() {
+            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/new");
+        }
+        function editPage(page) {
+            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + page._id);
+        }
+        function profile() {
+            $location.url("/user/" + vm.userId);
+        }
+        function back() {
+            $location.url("/user/" + vm.userId + "/website/");
+        }
+
+        function clear() {
+            vm.success = "";
+            vm.alert = "";
+        }
+    }
+})();

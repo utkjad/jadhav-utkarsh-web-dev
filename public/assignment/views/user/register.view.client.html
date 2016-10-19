@@ -1,17 +1,30 @@
 
-    <div class="container">
+    <div class="container-fluid">
         <h1>Register</h1>
-        <input ng-model="model.user.username" type="text"
+        <div ng-if="model.alert" class="alert alert-danger alert-dismissible" role="alert">
+            <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Failure!</strong> {{model.alert}}
+        </div>
+
+        <input ng-model="model.user.username"
+               type="text"
                class="form-control"
                placeholder="username"/>
-        <input ng-model="model.user.password" type="password"
+        <input ng-model="model.user.password"
+               type="password"
                class="form-control"
                placeholder="password"/>
-        <input ng-model="model.user.verifyPassword" type="password"
+        <input ng-model="model.user.verifyPassword"
+               type="password"
                class="form-control"
                placeholder="verify password"/>
-        <a class="btn btn-primary btn-block"
-           href="#/profile">Register</a>
-        <a class="btn btn-danger  btn-block"
-           href="#/login">Cancel</a>
+
+        <a ng-click="model.register(model.user)"
+           class="btn btn-primary btn-block">
+            Register
+        </a>
+        <a ng-click="model.cancel()"
+           class="btn btn-danger  btn-block">
+            Cancel
+        </a>
     </div>

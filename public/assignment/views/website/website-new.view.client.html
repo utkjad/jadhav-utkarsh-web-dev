@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text no-padding pull-left">
-            <a href="website-list.html" class="navbar-link">
+            <a ng-click="model.back()" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left">
                     </span>
             </a>
@@ -14,7 +14,7 @@
                 </a>
             </div>
             <p class="navbar-text pull-right">
-                <a href="website-new.html" class="navbar-link">
+                <a ng-click="model.newWebsite()" class="navbar-link">
                         <span class="glyphicon glyphicon-plus">
                         </span>
                 </a>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="navbar-text pull-right">
-            <a href="website-list.html" class="navbar-link">
+            <a ng-click="model.createWebsite(model.website)" class="navbar-link">
                     <span class="glyphicon glyphicon-ok">
                     </span>
             </a>
@@ -37,50 +37,16 @@
 </nav>
 
 <div class="container-fluid">
+
     <div class="no-padding-left no-padding-right sidebar col-sm-4 col-md-3">
         <ul class="list-group">
-            <li class="list-group-item">
-                <a href="../page/page-list.html">
-                    Address Book App
+            <li ng-repeat= "website in model.websites"
+                class="list-group-item">
+                <a ng-click="model.openWebsite(website)">
+                    {{website.name}}
                 </a>
                 <p class="pull-right">
-                    <a href="website-edit.html">
-                            <span class="glyphicon glyphicon-cog">
-                            </span>
-                    </a>
-                </p>
-            </li>
-
-            <li class="list-group-item">
-                <a href="../page/page-list.html">
-                    Blogger
-                </a>
-                <p class="pull-right">
-                    <a href="website-edit.html">
-                            <span class="glyphicon glyphicon-cog">
-                            </span>
-                    </a>
-                </p>
-            </li>
-
-            <li class="list-group-item">
-                <a href="../page/page-list.html">
-                    Blogging App
-                </a>
-                <p class="pull-right">
-                    <a href="website-edit.html">
-                            <span class="glyphicon glyphicon-cog">
-                            </span>
-                    </a>
-                </p>
-            </li>
-
-            <li class="list-group-item">
-                <a href="../page/page-list.html">
-                    Script Testing App
-                </a>
-                <p class="pull-right">
-                    <a href="website-edit.html">
+                    <a ng-click="model.editWebsite(website)">
                             <span class="glyphicon glyphicon-cog">
                             </span>
                     </a>
@@ -88,7 +54,18 @@
             </li>
         </ul>
     </div>
+
     <div class="col-sm-8 col-md-9 inverse-sidebar">
+        <div ng-if="model.alert" class="alert alert-danger alert-dismissible" role="alert">
+            <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Failure!</strong> {{model.alert}}
+        </div>
+
+        <div ng-if="model.success" class="alert alert-success alert-dismissible" role="alert">
+            <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Success!</strong> {{model.success}}
+        </div>
+
         <form>
             <div class="form-group">
                 <label for="name">Name</label>
@@ -114,7 +91,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="../user/profile.html" class="navbar-link">
+            <a ng-click ="model.profile()" class="navbar-link">
                     <span class="glyphicon glyphicon-user">
                     </span>
             </a>

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class = "navbar-text no-padding pull-left">
-            <a href="../website/website-list.html" class = "navbar-link">
+            <a ng-click="model.back()" class = "navbar-link">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
@@ -13,9 +13,8 @@
         </div>
 
         <p class="navbar-text pull-right">
-            <a href="page-new.html" class="navbar-link">
-                        <span class="glyphicon glyphicon-plus">
-                        </span>
+            <a ng-click="model.newPage()" class="navbar-link">
+                        <span class="glyphicon glyphicon-plus"></span>
             </a>
         </p>
     </div>
@@ -23,66 +22,13 @@
 
 <div class="container-fluid">
     <ul class="list-group">
-        <li class = "list-group-item">
-            <a href="../widget/widget-list.html">
-                Blog Post
+        <li ng-repeat = "page in model.pages" class = "list-group-item">
+            <a ng-click="model.openPage(page)">
+                {{page.name}}
             </a>
             <p class="pull-right">
-                <a href="page-edit.html">
-                    <span class="glyphicon glyphicon-cog">
-                    </span>
-                </a>
-
-            </p>
-        </li>
-
-        <li class = "list-group-item">
-            <a href="../widget/widget-list.html">
-                Blogs
-            </a>
-            <p class="pull-right">
-                <a href="page-edit.html">
-                    <span class="glyphicon glyphicon-cog">
-                    </span>
-                </a>
-
-            </p>
-        </li>
-
-        <li class = "list-group-item">
-            <a href="../widget/widget-list.html">
-                Home
-            </a>
-            <p class="pull-right">
-                <a href="page-edit.html">
-                    <span class="glyphicon glyphicon-cog">
-                    </span>
-                </a>
-
-            </p>
-        </li>
-
-        <li class = "list-group-item">
-            <a href="../widget/widget-list.html">
-                About Us
-            </a>
-            <p class="pull-right">
-                <a href="page-edit.html">
-                    <span class="glyphicon glyphicon-cog">
-                    </span>
-                </a>
-
-            </p>
-        </li>
-
-        <li class = "list-group-item">
-            <a href="../widget/widget-list.html">
-                Contact
-            </a>
-            <p class="pull-right">
-                <a href="page-edit.html">
-                    <span class="glyphicon glyphicon-cog">
-                    </span>
+                <a ng-click="model.editPage(page)">
+                    <span class="glyphicon glyphicon-cog"></span>
                 </a>
 
             </p>
@@ -93,9 +39,8 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="../user/profile.html" class="navbar-link">
-                    <span class="glyphicon glyphicon-user">
-                    </span>
+            <a ng-click="model.profile()" class="navbar-link">
+                    <span class="glyphicon glyphicon-user"></span>
             </a>
         </p>
     </div>

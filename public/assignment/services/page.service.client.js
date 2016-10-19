@@ -12,7 +12,7 @@
 
         var api = {
             createPage: createPage,
-            findPageByWebsiteId: findPageByWebsiteId,
+            findPagesByWebsiteId: findPagesByWebsiteId,
             findPageById: findPageById,
             updatePage: updatePage,
             deletePage: deletePage
@@ -27,9 +27,10 @@
                 description: page.description,
             }
             pages.push(newPage);
+            return newPage;
         }
 
-        function findPageByWebsiteId(websiteId) {
+        function findPagesByWebsiteId(websiteId) {
             var result = []
             for (page in pages){
                 if (pages[page].websiteId === websiteId) {
@@ -41,7 +42,7 @@
 
         function findPageById(pageId) {
             for (page in pages){
-                if (pages[page].websiteId === websiteId) {
+                if (pages[page]._id === pageId) {
                     return pages[page];
                 }
             }

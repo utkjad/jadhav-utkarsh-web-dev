@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($routeParams, UserService ) {
+    function ProfileController($routeParams, $location, UserService ) {
         var vm = this;
         vm.userId = $routeParams.uid;
         vm.updateUser= updateUser;
@@ -13,13 +13,13 @@
         
         function init() {
             console.log("ProfileController loaded");
-            var user = UserService.findUserByID(userId);
+            var user = UserService.findUserByID(vm.userId);
 
             if (user){
                 console.log("Found User");
                 vm.user = user;
             } else{
-                console.log("User Not Found");
+                console.log("User Not Found" + user);
             }
         }
         init();
@@ -34,7 +34,7 @@
         }
 
         function website() {
-            $location.url("/user/" + vm.userID);
+            $location.url("/user/" + vm.userId + "/website");
         }
 
         function logout() {
