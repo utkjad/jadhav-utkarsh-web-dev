@@ -34,13 +34,14 @@
                     text: widget.text
                 };
                 widgets.push(newWidget);
+                return newWidget;
             }
 
 
             function findWidgetsByPageId(pid) {
                 var result = [];
                 for(var widget in widgets){
-                    if(widgets[widget].pageId == parseInt(pid)){
+                    if(parseInt(widgets[widget].pageId) === parseInt(pid)){
                         result.push(widgets[widget]);
                     }
                 }
@@ -50,7 +51,7 @@
             function findWidgetById(widgetId) {
                 for (var u in widgets){
                     widget = widgets[u];
-                    if (widget._id ===  parseInt(widgetId)){
+                    if (parseInt(widget._id) ===  parseInt(widgetId)){
                         return widget;
                     }
                 }
@@ -60,7 +61,7 @@
             function updateWidget(widgetId, widget) {
                 for (var w in widgets){
                     currWidget = widgets[w];
-                    if (currWidget._id ===  parseInt(widgetId)){
+                    if (parseInt(currWidget._id) ===  parseInt(widgetId)){
                         currWidget.widgetType = widget.widgetType;
                         currWidget.pageId = widget.pageId;
                         currWidget.size = widget.size;
@@ -74,7 +75,7 @@
             function deleteWidget(widgetId) {
                 for (var i in users){
                     widget = widgets[i];
-                    if (widget._id ===  parseInt(widgetId)){
+                    if (parseInt(widget._id) ===  parseInt(widgetId)){
                         widgets.splice(i, 1);
                     }
                 }

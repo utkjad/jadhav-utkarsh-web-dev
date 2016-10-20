@@ -1,0 +1,66 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text no-padding pull-left">
+            <a ng-click="model.back()" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3 no-padding">
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand navbrand no-mar">
+                    Choose Widget
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+
+    <div ng-if="model.alert" class="alert alert-danger alert-dismissible" role="alert">
+        <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Failure!</strong> {{model.alert}}
+    </div>
+
+    <div ng-if="model.success" class="alert alert-success alert-dismissible" role="alert">
+        <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Success!</strong> {{model.success}}
+    </div>
+
+    <div class="col-sm-6 col-md-5 inverse-sidebar">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a ng-click="model.createWidget('HEADER')">
+                    Header
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">
+                    Label
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a ng-click="model.createWidget('IMAGE')">
+                    Image
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a ng-click="model.createWidget('YOUTUBE')">
+                    YouTube
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a ng-click="model.profile()" class="navbar-link">
+                    <span class="glyphicon glyphicon-user">
+                    </span>
+            </a>
+        </p>
+    </div>
+</nav>

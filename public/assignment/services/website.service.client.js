@@ -30,6 +30,7 @@
                     description: website.description
                 };
                 websites.push(newWebsite);
+
                 return newWebsite;
             }
 
