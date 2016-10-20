@@ -1,70 +1,84 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-        <div class = "navbar-text no-padding pull-left">
-            <a href="widget-list.html" class = "navbar-link">
-                <span class="glyphicon glyphicon-chevron-left"></span>
+        <div class="navbar-text no-padding pull-left">
+            <a ng-click="model.back()" class="navbar-link">
+                <span class="glyphicon glyphicon-chevron-left">
+                </span>
             </a>
         </div>
-
         <div class="navbar-header pull-left">
-            <a href= "widget-list.html" class="navbar-brand navbrand">
-                Edit Widget
+            <a class="navbar-brand navbrand">
+                Widget Edit
             </a>
         </div>
-
-        <p class="navbar-text pull-right">
-            <a href="widget-list.html" class="navbar-link">
-                        <span class="glyphicon glyphicon-ok">
-                        </span>
+        <div class="navbar-text pull-right">
+            <a ng-click="model.updateWidget(model.widget)" class="navbar-link">
+                <span class="glyphicon glyphicon-ok">
+                </span>
             </a>
-        </p>
+        </div>
     </div>
 </nav>
 
-
 <div class="container-fluid">
+    <div>
 
-    <div class="inverse-sidebar">
+        <div ng-if="model.alert" class="alert alert-danger alert-dismissible" role="alert">
+            <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Failure!</strong> {{model.alert}}
+        </div>
+
+        <div ng-if="model.success" class="alert alert-success alert-dismissible" role="alert">
+            <button ng-click="model.clear()" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Success!</strong> {{model.success}}
+        </div>
+
         <form>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input id="name"
+                <input ng-model="model.widget.name"
+                       id="name"
                        type="text"
-                       placeholder="Name"
-                       class="form-control">
+                       class="form-control"
+                       value="{{model.widget.name}}">
             </div>
             <div class="form-group">
                 <label for="text">Text</label>
-                <input id="text"
+                <input ng-model="model.widget.text"
+                       id="text"
                        type="text"
-                       placeholder="Text"
-                       class="form-control">
+                       class="form-control"
+                       value="{{model.widget.text}}">
             </div>
             <div class="form-group">
                 <label for="url">URL</label>
-                <input id="url"
+                <input ng-model="model.widget.url"
+                       id="url"
                        type="url"
                        class="form-control"
-                       placeholder="URL"
-                       value="">
+                       value="{{model.widget.url}}">
             </div>
             <div class="form-group">
                 <label for="width">Width</label>
-                <input id="width"
+                <input ng-model="model.widget.width"
+                       id="width"
                        type="text"
                        class="form-control"
-                       placeholder="Width"
-                       value="">
+                       value="{{model.widget.width}}">
             </div>
             <div class="form-group">
                 <label for="upload">Upload</label>
                 <input id="upload"
                        type="file"
-                       placeholder="Upload"
                        class="form-control">
             </div>
         </form>
-        <a href="widget-list.html"
+
+        <a href="#"
+           class="btn btn-block btn-primary">
+            Upload
+        </a>
+        <a ng-click="model.deleteWidget()"
            class="btn btn-block btn-danger">
             Delete
         </a>
@@ -74,9 +88,9 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
-            <a href="../views/user/profile.html" class="navbar-link">
-                    <span class="glyphicon glyphicon-user">
-                    </span>
+            <a ng-click="model.profile()" class="navbar-link">
+                <span class="glyphicon glyphicon-user">
+                </span>
             </a>
         </p>
     </div>

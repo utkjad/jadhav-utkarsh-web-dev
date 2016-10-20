@@ -2,15 +2,14 @@
     <div class="container-fluid">
         <div class="navbar-text no-padding pull-left">
             <a ng-click="model.back()" class="navbar-link">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="glyphicon glyphicon-chevron-left">
+                </span>
             </a>
         </div>
-        <div class="col-sm-4 col-md-3 no-padding">
-            <div class="navbar-header pull-left">
-                <a class="navbar-brand navbrand no-mar">
-                    Choose Widget
-                </a>
-            </div>
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand navbrand">
+                Choose Widget
+            </a>
         </div>
     </div>
 </nav>
@@ -27,39 +26,66 @@
         <strong>Success!</strong> {{model.success}}
     </div>
 
-    <div class="col-sm-6 col-md-5 inverse-sidebar">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <a ng-click="model.createWidget('HEADER')">
-                    Header
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="#">
-                    Label
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a ng-click="model.createWidget('IMAGE')">
-                    Image
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a ng-click="model.createWidget('YOUTUBE')">
-                    YouTube
-                </a>
-            </li>
-
-        </ul>
-    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a ng-click="model.createWidget('HEADER')">
+                Header
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">
+                Label
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">
+                HTML
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">
+                Text Input
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">
+                Link
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">
+                Button
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-click="model.createWidget('IMAGE')">
+                Image
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a ng-click="model.createWidget('YOUTUBE')">
+                YouTube
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">
+                Data Table
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#">
+                Repeater
+            </a>
+        </li>
+    </ul>
 </div>
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <p class="navbar-text pull-right">
             <a ng-click="model.profile()" class="navbar-link">
-                    <span class="glyphicon glyphicon-user">
-                    </span>
+                <span class="glyphicon glyphicon-user">
+                </span>
             </a>
         </p>
     </div>
