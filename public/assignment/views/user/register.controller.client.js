@@ -20,7 +20,7 @@
                     returnedUser = UserService.createUser(user);
 
                     if (returnedUser) {
-                        $location.url("/user/" + user._id);
+                        $location.url("/user/" + returnedUser._id);
                     } else{
                         vm.alert = "Could not create user."
                     }

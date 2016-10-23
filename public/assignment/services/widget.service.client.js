@@ -68,15 +68,16 @@
                         currWidget.text = widget.text;
                         return true;
                     }
-                    return false;
                 }
+                return false;
             }
 
             function deleteWidget(widgetId) {
-                for (var i in users){
+                for (var i in widgets){
                     widget = widgets[i];
                     if (parseInt(widget._id) ===  parseInt(widgetId)){
                         widgets.splice(i, 1);
+                        return true;
                     }
                 }
                 return null;
