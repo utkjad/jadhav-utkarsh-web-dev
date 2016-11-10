@@ -14,7 +14,15 @@
 
             function init() {
                 console.log("WebsiteListController loaded");
-                vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
+
+                WebsiteService
+                    .findWebsitesByUser(vm.userId)
+                    .success(function (responseWebsite) {
+                        vm.websites = responseWebsite;
+                    })
+                    .error(function (err) {
+                        vm.alert = "Unable to find Websites for user " + vm.userId;
+                    })
             }
             init();
 

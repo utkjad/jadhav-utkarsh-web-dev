@@ -17,9 +17,32 @@
 
         function init() {
             console.log("WebsiteEditController loaded");
-            vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
+            PageService
+                .findPagesByWebsiteId(vm.websiteId)
+                .success(function (pages) {
+                    vm.pages = pages;
+                })
+                .error( function (err) {
+                    vm.alert = "could not retrieve the pages!";
+                })
         }
         init();
+
+        function createPage(page) {
+            if (page && page.name) {
+                PageService
+                    .createPage(vm.websiteId, page)
+                    .success(function (res) {
+                        vm.success = "Page created";
+                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+                    })
+                    .error(function (err) {
+                        vm.alert = "Unable to create page";
+                    })
+            } else {
+                vm.alert = "Please fill fields to create page";
+            }
+        }
 
         function back() {
             $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
@@ -27,20 +50,6 @@
 
         function newPage() {
             $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/new");
-        }
-
-        function createPage(page) {
-            if (page && page.name) {
-                page = PageService.createPage(vm.websiteId, page);
-                if (page) {
-                    vm.success = "Page created";
-                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
-                } else {
-                    vm.alert = "Unable to create page";
-                }
-            } else {
-                vm.alert = "Please fill fields to create page";
-            }
         }
 
         function openPage(page) {

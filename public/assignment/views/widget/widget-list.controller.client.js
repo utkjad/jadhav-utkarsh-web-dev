@@ -14,12 +14,30 @@
             vm.getSafeHtml = getSafeHtml;
             vm.getSafeUrl = getSafeUrl;
             vm.profile = profile;
+            vm.reorderWidget = reorderWidget;
 
             function init() {
-                vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+                WidgetService
+                    .findWidgetsByPageId(vm.pageId)
+                    .success(function (widgets) {
+                        vm.widgets = widgets;
+                    })
+                    .error(function (err) {
+                        vm.alert = "Unable to load widgets!";
+                    })
             }
             init();
 
+            function reorderWidget(start, end) {
+                WidgetService
+                    .reorderWidget(vm.pageId, start, end)
+                    .success(function (response) {
+                        vm.success = "Widgets reordered";
+                    })
+                    .error(function (error) {
+                        vm.alert = "Unable to reorder widgets";
+                    })
+            }
             function back() {
                 $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
             }

@@ -19,40 +19,62 @@
 
         function init() {
             console.log("EditPageController loaded");
-            vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
-            vm.page = PageService.findPageById(vm.pageId);
+            PageService
+                .findPagesByWebsiteId(vm.websiteId)
+                .success(function (pages) {
+                    vm.pages = pages;
+                })
+                .error( function (err) {
+                    vm.alert = "could not retrieve the pages!";
+                })
+
+            PageService
+                .findPageById(vm.pageId)
+                .success(function (page) {
+                    vm.page = page;
+                })
+                .error( function (err) {
+                    vm.alert = "could not find the page!";
+                })
         }
         init();
+
+        function updatePage(page) {
+            PageService
+                .updatePage(vm.pageId, page)
+                .success(function (page) {
+                    vm.success = "Page updated";
+                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+                })
+                .error(function (err) {
+                    vm.alert = "cannot update page";
+                })
+        }
+
+        function deletePage(page) {
+            PageService
+                .deletePage(vm.pageId)
+                .success(function (res) {
+                    vm.success = "Page deleted";
+                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+                })
+                .error(function (err) {
+                    vm.alert = "Unable to delete page";
+                })
+        }
 
         function profile() {
             $location.url("/user/" + vm.userId);
         }
-        function deletePage(page) {
-            var isPageDeleted = PageService.deletePage(vm.pageId);
-            if (isPageDeleted) {
-                vm.success = "Page deleted";
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
-            } else {
-                vm.alert = "Unable to delete page";
-            }
-        }
+
         function editPage(page) {
             $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + page._id);
         }
-        
+
         function openPage(page) {
             $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + page._id + "/widget");
         }
 
-        function updatePage(page) {
-            page = PageService.updatePage(vm.pageId, page);
-            if (page) {
-                vm.success = "Page updated";
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
-            } else {
-                vm.alert = "cannot update page";
-            }
-        }
         function newPage() {
             $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/new");
         }
@@ -65,6 +87,5 @@
             vm.success = "";
             vm.alert = "";
         }
-
     }
 })();

@@ -17,13 +17,15 @@
         function register(user) {
             if(user.username){
                 if(user.password === user.verifyPassword){
-                    returnedUser = UserService.createUser(user);
-
-                    if (returnedUser) {
-                        $location.url("/user/" + returnedUser._id);
-                    } else{
-                        vm.alert = "Could not create user."
-                    }
+                    var promise  = UserService.createUser(user);
+                    promise
+                        .success(function (returnedUser) {
+                            $location.url("/user/" + returnedUser._id);
+                        })
+                        .error(function (err) {
+                            console.log(err);
+                            vm.alert = "Could not create user."
+                        })
                 } else {
                     vm.alert = "Passwords do not match.";
                 }

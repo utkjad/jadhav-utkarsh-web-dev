@@ -14,31 +14,47 @@
             vm.deleteWidget = deleteWidget;
             vm.profile = profile;
             vm.clear = clear;
+            vm.url = url;
 
             function init() {
                 console.log("EditWidgetController loaded");
-                vm.widget = WidgetService.findWidgetById(vm.widgetId);
+                WidgetService
+                    .findWidgetById(vm.widgetId)
+                    .success(function (widget) {
+                        vm.widget = widget;
+                    })
+                    .error(function (error) {
+                        vm.alert = "Unable to find widget";
+                    })
             }
             init();
 
+            function url() {
+                return "/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/" + vm.widgetId;
+            }
+
             function updateWidget(widget) {
-                widget = WidgetService.updateWidget(vm.widgetId, widget);
-                if (widget) {
-                    vm.success = "Widget updated";
-                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
-                } else {
-                    vm.alert = "Unable to update Widget";
-                }
+                WidgetService
+                    .updateWidget(vm.widgetId, widget)
+                    .success(function (res) {
+                        vm.success = "Widget updated";
+                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
+                    })
+                    .error(function (err) {
+                        vm.alert = "Unable to update Widget";
+                    })
             }
 
             function deleteWidget() {
-                var response = WidgetService.deleteWidget(vm.widgetId);
-                if (response) {
-                    vm.success = "Widget deleted";
-                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
-                } else {
-                    vm.alert = "Unable to delete widget";
-                }
+                WidgetService
+                    .deleteWidget(vm.widgetId)
+                    .success(function (res) {
+                        vm.success = "Widget deleted";
+                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
+                    })
+                    .error(function (err) {
+                        vm.alert = "Unable to delete widget";
+                    })
             }
 
             function back() {

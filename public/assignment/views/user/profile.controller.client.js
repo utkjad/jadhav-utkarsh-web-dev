@@ -10,27 +10,47 @@
         vm.website = website;
         vm.logout = logout;
         vm.clear = clear;
+        vm.deleteUser = deleteUser;
         
         function init() {
             console.log("ProfileController loaded");
-            var user = UserService.findUserByID(vm.userId);
+            UserService
+                .findUserByID(vm.userId)
+                .success(function (user) {
+                    if (user){
+                        vm.user = user;
+                    } else{
+                        console.log("User Not Found" + user);
+                    }
+                })
+                .error(function (err) {
+                    console.log(err);
+                });
 
-            if (user){
-                console.log("Found User");
-                vm.user = user;
-            } else{
-                console.log("User Not Found" + user);
-            }
         }
         init();
 
         function updateUser(user) {
-            updateStatus = UserService.updateUser(vm.userId, user);
-            if (updateStatus) {
-                vm.success = "User updated";
-            }else {
-                vm.alert = "Cannot update user.";
-            }
+            UserService
+                .updateUser(vm.userId, user)
+                .success(function (response) {
+                    vm.success = "User updated";
+                })
+                .error(function (err) {
+                    vm.alert = "Cannot update user.";
+                })
+        }
+
+        function deleteUser(user) {
+            UserService
+                .deleteUser(vm.userId)
+                .success(function (retUser){
+                    console.log("user deleted successfully!");
+                    $location.url("/login");
+                })
+                .error(function (err){
+                    vm.alert = "Cannot Delete User!"
+                })
         }
 
         function website() {

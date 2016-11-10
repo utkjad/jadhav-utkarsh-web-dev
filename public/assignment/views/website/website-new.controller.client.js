@@ -16,7 +16,14 @@
 
         function init() {
             console.log("NewWebsiteController loaded");
-            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
+            WebsiteService
+                .findWebsitesByUser(vm.userId)
+                .success(function (responseWebsite) {
+                    vm.websites = responseWebsite;
+                })
+                .error(function (err) {
+                    vm.alert = "Unable to find Websites for user " + vm.userId;
+                })
         }
         init();
 
@@ -30,13 +37,16 @@
 
         function createWebsite(website){
             if (website && website.name) {
-                website = WebsiteService.createWebsite(vm.userId, website);
-                if (website) {
-                    vm.success = "created website!yay!";
-                    $location.url("/user/" + vm.userId + "/website");
-                } else {
-                    vm.alert = "cannot create website.";
-                }
+                WebsiteService
+                    .createWebsite(vm.userId, website)
+                    .success(function (website) {
+                        vm.success = "Created Website " + website.name + "!!! Yippe!";
+                        console.log("In createWebsite " + website.name + " exists now!");
+                        $location.url("/user/" + vm.userId + "/website");
+                    })
+                    .error(function (err) {
+                        vm.alert = "Cannot create website!";
+                    })
             } else {
                 vm.alert = "Please enter details of website including name and description.";
             }

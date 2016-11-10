@@ -16,7 +16,14 @@
 
         function init() {
             console.log("PageListController loaded");
-            vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
+            PageService
+                .findPagesByWebsiteId(vm.websiteId)
+                .success(function (pages) {
+                    vm.pages = pages;
+                })
+                .error( function (err) {
+                    vm.alert = "could not retrieve the pages!";
+                })
         }
         init();
 
