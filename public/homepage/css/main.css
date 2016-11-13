@@ -1,0 +1,112 @@
+body {
+    background-image: url(dot.png);
+    padding-top: 120px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-size: 3px;
+}
+
+.container-fluid {
+    padding: 0 0 0 0;
+}
+
+.navbar {
+    border: solid 4px;
+    border-color: black;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0 0 0 0;
+    line-height: 120px;
+    text-align: center;
+}
+
+.navbar-header {
+    background-color: #FFDB00;
+    float: left;
+    /*padding: 20px;*/
+    width: 100%;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+}
+
+.navbar-brand {
+    float: none;
+    font-family: 'Righteous', serif;
+    font-size: 3em;
+    color: black;
+}
+
+.marathi {
+    font-family: 'Yatra One', cursive;
+    font-size: 3em;
+}
+
+a:hover {
+    color: #7b080c;
+}
+
+/*
+Sidebar
+*/
+.sidebar {
+    /*padding-top: 80px;*/
+    display: none;
+}
+
+.inverse-sidebar {
+    /*padding-top: 80px;*/
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        border: solid 4px;
+        border-color: black;
+        background-color: white;
+        display: block;
+        height: 100%;
+
+    }
+
+    .sidebar ul li {
+        list-style-type: none;
+        margin: 0px;
+    }
+
+    .sidebar ul li a {
+        color: #111;
+        display: inline-block;
+        width: 93%;
+        line-height: 2.5em;
+        background-image: url(dot.png);
+        background-repeat: repeat-x;
+        background-position: 100% 61%;
+        background-size: 4px;
+    }
+
+    .fa-lg {
+        vertical-align: 0;
+    }
+
+    .sidebar ul li a span {
+        background-color: white;
+    }
+
+    .sidebar ul li a span.right {
+        float: right;
+    }
+
+    .sidebar ul li a span.left {
+        float: left;
+    }
+
+    .nav-sidebar {
+        display: block;
+    }
+
+    .inverse-sidebar {
+        background-color: white;
+        padding-right: 0;
+        padding-left: 40px;
+    }
+
+}

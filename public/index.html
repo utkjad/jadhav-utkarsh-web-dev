@@ -1,33 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="redirectApp">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:900" rel="stylesheet">
+    <title>Web Dev Course Home Page</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 </head>
-<body>
-
-    <p>
-
-        <h1> Work in progress.Thank you!</h1>
-    </p>
-
-    <h2>Required links</h2>
-    <ul>
-        <li>
-            <a href="#/index">Project</a>
-        </li>
-        <li>
-            <a href="/assignment">Assignment</a>
-        </li>
-        <li>
-            <a href="#/index">Test MongoDB</a>
-        </li>
-        <li>
-            <a href="https://github.com/utkjad/">Your public repository at GitHub.com</a>
-        </li>
-    </ul>
+<body ng-controller="redirectController">
 </body>
+<script type="text/javascript">
+    (function () {
+        angular
+                .module("redirectApp", [])
+                .controller("redirectController", function ($location, $window) {
+                    var address = $location.absUrl();
+
+                    function init() {
+                        $window.location.href = address + "/homepage";
+                    }
+
+                    init();
+                });
+    })();
+</script>
 </html>

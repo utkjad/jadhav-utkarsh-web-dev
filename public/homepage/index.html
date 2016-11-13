@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='Homepage'>>
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Website</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+
+    <!--CSS-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/main.css" rel="stylesheet"/>
+
+    <!--Project level scripts-->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+
+</head>
+
+<body>
+<div class="container-fluid ">
+    <nav class="navbar navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand navbar-text" href="#">Utkarsh J</a>
+            <a class="navbar-brand navbar-text marathi" href="#"> (उत्कर्ष) </a>
+        </div>
+    </nav>
+
+    <div class="sidebar col-sm-4 col-md-3">
+        <ul>
+            <li>
+                <a href="#/aboutme">
+                    <span class="left">About</span>
+                    <span class="right"><i class="fa fa-user fa-lg fa-fw"></i></span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://github.com/utkjad/">
+                    <span class="left">Github</span>
+                    <span class="right"><i class="fa fa-github fa-lg fa-fw"></i></span>
+                </a>
+            </li>
+
+            <li>
+                <a href="/assignment">
+                    <span class="left">Assignment</span>
+                    <span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#/index">
+                    <span class="left">Project</span>
+                    <span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#/index">
+                    <span class="left">Test MongoDB</span>
+                    <span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-view>
+    </div>
+</div>
+</body>
+</html>
