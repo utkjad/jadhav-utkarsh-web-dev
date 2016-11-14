@@ -2,6 +2,7 @@ body {
     padding-top: 120px;
     margin-left: 10%;
     margin-right: 10%;
+    background-color: #FDFDFD;
 }
 
 .container-fluid {
@@ -97,7 +98,7 @@ body {
 }
 
 .resume section h4 span {
-    background-color: white;
+    background-color: #FDFDFD;
 }
 
 .resume section ul {
@@ -148,7 +149,7 @@ body {
 }
 
 .contact ul li a span {
-    background-color: white;
+    background-color: #FDFDFD;
 }
 
 .contact ul li a span.right {
@@ -192,7 +193,7 @@ Sidebar
         border-right: solid 2px;
         border-color: #7b080c;
         font-family: 'Gentium Book Basic', serif;
-        background-color: white;
+        background-color: #FDFDFD;
         font-size: medium;
         display: block;
         height: 100%;
@@ -236,7 +237,7 @@ Sidebar
     }
 
     .sidebar ul li a span {
-        background-color: white;
+        background-color: #FDFDFD;
     }
 
     .sidebar ul li a span.right {
