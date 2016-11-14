@@ -1,9 +1,7 @@
 body {
-    background-image: url(dot.png);
     padding-top: 120px;
     margin-left: 10%;
     margin-right: 10%;
-    background-size: 3px;
 }
 
 .container-fluid {
@@ -11,8 +9,6 @@ body {
 }
 
 .navbar {
-    border: solid 4px;
-    border-color: black;
     margin-left: 10%;
     margin-right: 10%;
     padding: 0 0 0 0;
@@ -21,52 +17,192 @@ body {
 }
 
 .navbar-header {
-    background-color: #FFDB00;
+    background-color: #7b080c;
     float: left;
-    /*padding: 20px;*/
     width: 100%;
     border-bottom: solid;
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
+    border-color: #7b080c;
 }
 
 .navbar-brand {
     float: none;
     font-family: 'Righteous', serif;
-    font-size: 3em;
-    color: black;
+    font-size: 4em;
+    color: white;
 }
 
 .marathi {
     font-family: 'Yatra One', cursive;
-    font-size: 3em;
+    font-size: 4em;
+    color: white;
 }
 
-a:hover {
+.photo {
+    margin: 3px 3px 3px 3px;
+    border-color: #7b080c;
+    border: solid;
+    border-width: 3px;
+    padding: 2px 2px 2px 2px;
+}
+
+.photo-icon {
+    padding: 3px 3px 3px 3px;
+    height: 50px;
+    width: 50px;
+}
+
+.photo-icon-company {
+    padding: 3px 3px 3px 3px;
+    height: 50px;
+    max-width: 100px;
+}
+
+/*----------------------------------------*/
+/*-------------RESUME--------------------*/
+/*----------------------------------------*/
+.resume section h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.section-title {
+    padding-top: 10px;
+}
+
+.resume section h4 {
+    color: #111;
+    display: inline-block;
+    width: 100%;
+    /*line-height: 1em;*/
+    background-image: url(dot.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+}
+
+.resume section h4:hover {
     color: #7b080c;
+    display: inline-block;
+    width: 100%;
+    /*line-height: 2.5em;*/
+    background-image: url(dot_maroon.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+}
+
+.resume section .summary h4 {
+
+}
+
+.resume section h4 span {
+    background-color: white;
+}
+
+.resume section ul {
+    list-style-type: none;
+}
+
+.resume span.right {
+    float: right;
+}
+
+.resume span.left {
+    float: left;
+}
+
+/*----------------------------------------*/
+/*-------------END RESUME----------------*/
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*-------------Contact--------------------*/
+/*----------------------------------------*/
+.contact ul li {
+    list-style-type: none;
+}
+
+.contact ul li a {
+    color: #111;
+    display: inline-block;
+    width: 50%;
+    line-height: 2.5em;
+    background-image: url(dot.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+}
+
+.contact ul li a:hover {
+    color: #7b080c;
+    display: inline-block;
+    width: 50%;
+    line-height: 2.5em;
+    background-image: url(dot_maroon.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+    opacity: 1;
+
+}
+
+.contact ul li a span {
+    background-color: white;
+}
+
+.contact ul li a span.right {
+    float: right;
+}
+
+.contact ul li a span.left {
+    float: left;
+}
+
+.contact {
+    font-size: medium;
+}
+
+/*----------------------------------------*/
+/*-------------END CONTACT----------------*/
+/*----------------------------------------*/
+
+.inverse-sidebar {
+    font-family: 'Gentium Book Basic', serif;
+    font-size: medium;
+    color: black;
+    text-align: justify;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    overflow-y: scroll;
+    margin-bottom: 40px;
 }
 
 /*
 Sidebar
 */
 .sidebar {
-    /*padding-top: 80px;*/
+    padding-top: 20px;
     display: none;
-}
-
-.inverse-sidebar {
-    /*padding-top: 80px;*/
 }
 
 @media (min-width: 768px) {
     .sidebar {
-        border: solid 4px;
-        border-color: black;
+        border-right: solid 2px;
+        border-color: #7b080c;
+        font-family: 'Gentium Book Basic', serif;
         background-color: white;
+        font-size: medium;
         display: block;
         height: 100%;
-
+        padding-right: 0;
     }
 
+    .sidebar ul {
+        padding-left: 20px;
+        margin-top: 10px;
+    }
     .sidebar ul li {
         list-style-type: none;
         margin: 0px;
@@ -83,6 +219,18 @@ Sidebar
         background-size: 4px;
     }
 
+    .sidebar ul li a:hover {
+        color: #7b080c;
+        display: inline-block;
+        width: 93%;
+        line-height: 2.5em;
+        background-image: url(dot_maroon.png);
+        background-repeat: repeat-x;
+        background-position: 100% 61%;
+        background-size: 4px;
+        opacity: 1;
+
+    }
     .fa-lg {
         vertical-align: 0;
     }
@@ -103,10 +251,12 @@ Sidebar
         display: block;
     }
 
-    .inverse-sidebar {
-        background-color: white;
-        padding-right: 0;
-        padding-left: 40px;
+    .ngview {
+        /*margin-left : 300px;*/
+    }
+
+    .element {
+
     }
 
 }
