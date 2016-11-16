@@ -27,10 +27,12 @@ body {
 }
 
 .navbar-brand {
+    opacity: 0.8;
     float: none;
     font-family: 'Righteous', serif;
     font-size: 4em;
     color: #7b080c;
+
 }
 
 .marathi {
@@ -40,10 +42,10 @@ body {
 }
 
 .photo {
-    margin: 3px 3px 3px 3px;
+    margin: 2px 2px 2px 2px;
     border-color: #7b080c;
     border: solid;
-    border-width: 3px;
+    border-width: 1.5px;
     padding: 2px 2px 2px 2px;
 }
 
@@ -74,7 +76,7 @@ body {
 .resume section h4 {
     color: #111;
     display: inline-block;
-    width: 100%;
+    width: 60%;
     /*line-height: 1em;*/
     background-image: url(dot.png);
     background-repeat: repeat-x;
