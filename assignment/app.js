@@ -5,5 +5,5 @@ module.exports = function (app) {
     require("./services/page.service.server.js")(app);
     require("./services/widget.service.server.js")(app);
 
-    require("./model/models.server")();
+    // require("./model/models.server")();
 };
