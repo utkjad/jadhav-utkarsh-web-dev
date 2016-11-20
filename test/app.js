@@ -21,6 +21,7 @@ module.exports = function(app)
 
 
     var mongoose = require("mongoose");
+    mongoose.Promise = require("bluebird");
     mongoose.connect(connectionString);
 
     var TestSchema = mongoose.Schema({
