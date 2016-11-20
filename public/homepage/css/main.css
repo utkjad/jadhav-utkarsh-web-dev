@@ -85,6 +85,7 @@ body {
 }
 
 .resume section h4:hover {
+    /*hope is what we have!*/
     color: #7b080c;
     display: inline-block;
     width: 100%;
