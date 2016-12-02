@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Utkarsh J</title>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -19,99 +19,114 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/resume.css" rel="stylesheet"/>
+    <link href="css/contact.css" rel="stylesheet"/>
+    <link href="css/menu.css" rel="stylesheet"/>
+    <link href="css/title.css" rel="stylesheet"/>
+    <link href="css/photos_and_icons.css" rel="stylesheet"/>
 
     <!--Project level scripts-->
     <script src="app.js"></script>
     <script src="config.js"></script>
+
+    <!--Tab icon-->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 </head>
 
 <body>
 <div class="container-fluid">
+
     <nav class="navbar navbar-fixed-top">
         <div class="navbar-header">
             <span class="navbar-brand navbar-text" href="#">Utkarsh J.</span>
             <span class="navbar-brand navbar-text marathi" href="#"> (उत्कर्ष) </span>
         </div>
     </nav>
-    <div class="row">
-        <div class="sidebar col-sm-4 col-md-3">
-            <ul>
-                <li>
-                    <a href="#/aboutme">
-                        <span class="left">ABOUT ME</span>
-                        <span class="right"><i class="fa fa-user-circle fa-lg fa-fw"></i></span>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="#/contact">
-                        <span class="left">CONTACT</span>
-                        <span class="right"><i class="fa fa-address-card fa-lg fa-fw"></i></span>
-                    </a>
-                </li>
+    <div class="sidebar col-sm-4 col-md-3">
+        <ul>
+            <li>
+                <a href="#/aboutme">
+                    <span class="left">ABOUT ME</span>
+                    <span class="right"><i class="fa fa-user-circle fa-lg fa-fw"></i></span>
+                </a>
+            </li>
 
-                <li>
-                    <a href="#/resume">
-                        <span class="left">RESUME</span>
-                        <span class="right"><i class="fa fa-file fa-lg fa-fw"></i></span>
-                    </a>
-                </li>
+            <li>
+                <a href="#/contact">
+                    <span class="left">CONTACT</span>
+                    <span class="right"><i class="fa fa-address-card fa-lg fa-fw"></i></span>
+                </a>
+            </li>
 
-                <li>
-                    <a href="https://github.com/utkjad/" target="_blank">
-                        <span class="left">GITHUB</span>
-                        <span class="right"><i class="fa fa-github fa-lg fa-fw"></i></span>
-                    </a>
-                </li>
+            <li>
+                <a href="#/resume">
+                    <span class="left">RESUME</span>
+                    <span class="right"><i class="fa fa-file fa-lg fa-fw"></i></span>
+                </a>
+            </li>
 
-                <!--<li>-->
-                <!--<a href="../test/index.html">Test MongoDB</a>-->
-                <!--</li>-->
+            <li>
+                <a href="https://github.com/utkjad/" target="_blank">
+                    <span class="left">GITHUB</span>
+                    <span class="right"><i class="fa fa-github fa-lg fa-fw"></i></span>
+                </a>
+            </li>
 
-                <li>
-                    <a href="https://www.linkedin.com/in/utkarshjadhav" target="_blank">
-                        <span class="left">LINKEDIN</span>
-                        <span class="right"><i class="fa fa-linkedin-square fa-lg fa-fw"></i></span>
-                    </a>
-                </li>
-                <!--<li>-->
-                <!--<a href="#/quotes">-->
-                <!--<span class="left">Quotes</span>-->
-                <!--<span class="right"><i class="fa fa-quote-right fa-lg fa-fw"></i></span>-->
-                <!--<span class="right"><i class="fa fa-quote-left fa-lg fa-fw"></i></span>-->
-                <!--</a>-->
-                <!--</li>-->
+            <!--<li>-->
+            <!--<a href="../test/index.html">Test MongoDB</a>-->
+            <!--</li>-->
 
-                <li>
-                    <a href="/assignment">
-                        <span class="left">CS5610 ASSIGNMENT</span>
-                        <span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>
-                    </a>
-                </li>
+            <li>
+                <a href="https://www.linkedin.com/in/utkarshjadhav" target="_blank">
+                    <span class="left">LINKEDIN</span>
+                    <span class="right"><i class="fa fa-linkedin-square fa-lg fa-fw"></i></span>
+                </a>
+            </li>
+            <!--<li>-->
+            <!--<a href="#/quotes">-->
+            <!--<span class="left">Quotes</span>-->
+            <!--<span class="right"><i class="fa fa-quote-right fa-lg fa-fw"></i></span>-->
+            <!--<span class="right"><i class="fa fa-quote-left fa-lg fa-fw"></i></span>-->
+            <!--</a>-->
+            <!--</li>-->
 
-                <li>
-                    <a href="#/index">
-                        <span class="left">CS5610 PROJECT</span>
-                        <span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>
-                    </a>
-                </li>
+            <li>
+                <a href="/assignment">
+                    <span class="left">CS5610 ASSIGNMENT</span>
+                    <span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>
+                </a>
+            </li>
 
-                <!--<li>-->
-                <!--<a href="#/index">-->
-                <!--<span class="left">TEST MONGODB</span>-->
-                <!--<span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>-->
-                <!--</a>-->
-                <!--</li>-->
-            </ul>
-        </div>
-        <div class="inverse-ele col-sm-8 col-md-9">
-            <div class="ngview">
-                <div ng-view>
-                </div>
+            <li>
+                <a href="#/index">
+                    <span class="left">CS5610 PROJECT</span>
+                    <span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>
+                </a>
+            </li>
+
+            <!--<li>-->
+            <!--<a href="#/index">-->
+            <!--<span class="left">TEST MONGODB</span>-->
+            <!--<span class="right"><i class="fa fa-link fa-lg fa-fw"></i></span>-->
+            <!--</a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+    <div class="inverse-ele col-sm-8 col-md-9">
+        <div class="ngview">
+            <div ng-view>
             </div>
         </div>
     </div>
+
+    <nav class="navbar navbar-fixed-bottom navbar-down">
+        <div class="navbar-header">
+            <span class="navbar-brand navbar-text" href="#">Utkarsh J.</span>
+            <span class="navbar-brand navbar-text marathi" href="#"> (उत्कर्ष) </span>
+        </div>
+    </nav>
+
 </div>
 </body>
 </html>

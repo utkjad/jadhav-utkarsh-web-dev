@@ -1,0 +1,361 @@
+/** Reset some basic elements */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+/** Basic styling */
+body {
+    font-family: "Roboto Slab", Baskerville, serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #111;
+    background-color: #fdfdfd;
+    -webkit-text-size-adjust: 100%;
+}
+
+/** Set `margin-bottom` to maintain vertical rhythm */
+h1, h2, h4, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
+    margin-bottom: 15px;
+}
+
+/** Images */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/** Figures */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: 14px;
+}
+
+/** Lists */
+ul, ol {
+    margin-left: 30px;
+}
+
+li > ul, li > ol {
+    margin-bottom: 0;
+}
+
+/** Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+/** Links */
+a {
+    color: #1e5fb6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4085E0;
+}
+
+/** Blockquotes */
+blockquote {
+    color: #828282;
+    border-left: 4px solid #e8e8e8;
+    padding-left: 15px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+/** Code formatting */
+pre, code {
+    font-size: 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+}
+
+pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/** Wrapper */
+.wrapper {
+    max-width: -webkit-calc(1200px - (30px * 2));
+    max-width: calc(1200px - (30px * 2));
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media only screen and (min-width: 601px) {
+    .wrapper {
+        max-width: -webkit-calc(1200px - (30px));
+        max-width: calc(1200px - (30px));
+    }
+}
+
+/** Clearfix */
+.wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/** Icons */
+.icon > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.icon > svg path {
+    fill: #828282;
+}
+
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    min-height: 2em;
+    font-size: 1.5em;
+    line-height: 2em;
+    position: relative;
+}
+
+@media only screen and (min-width: 601px) {
+    .site-header {
+        text-align: center;
+        line-height: 4em;
+        font-size: 2em;
+    }
+}
+
+a.site-title {
+    color: #111;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+    padding: 0 0.6667em;
+}
+
+a.site-title:hover {
+    color: #1e5fb6;
+}
+
+@media only screen and (min-width: 601px) {
+    a.site-title {
+        padding: 0 0.3333em;
+        float: none;
+    }
+}
+
+.site-nav {
+    float: right;
+    padding: 0 0.3333em;
+    position: absolute;
+    top: 0.25em;
+    right: 0.3333em;
+    text-align: right;
+}
+
+@media only screen and (min-width: 601px) {
+    .site-nav {
+        display: none;
+    }
+}
+
+.site-nav .menu-icon {
+    display: block;
+    float: right;
+    width: 26px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.site-nav .menu-icon-div, .site-nav .menu-icon-div:before, .site-nav .menu-icon-div:after {
+    width: 26px;
+    height: 4px;
+    position: absolute;
+    top: 16px;
+    background-color: #424242;
+    border-radius: 2px;
+}
+
+.site-nav .menu-icon-div:before {
+    content: '';
+    top: -10px;
+    left: 0;
+    transition: top 0.5s ease;
+}
+
+.site-nav .menu-icon-div:after {
+    content: '';
+    top: 10px;
+    left: 0;
+    transition: top 0.5s ease;
+}
+
+.site-nav .transition.menu-icon-div:before, .site-nav .transition.menu-icon-div:after {
+    top: 0;
+}
+
+.site-nav .trigger {
+    clear: both;
+    display: none;
+    background-color: #f5f5f5;
+}
+
+.site-nav .trigger a {
+    font-size: 0.75em;
+    padding: 0.5em 1.5em;
+    border-top: 1px solid #e8e8e8;
+}
+
+.site-nav .trigger a:hover {
+    color: #1e5fb6;
+}
+
+.site-nav .trigger:hover {
+    color: #1e5fb6;
+}
+
+.site-nav .page-link {
+    display: block;
+    padding: 5px 10px;
+    color: #111;
+    line-height: 1.5;
+}
+
+.site-nav .page-link:not(:first-child) {
+    margin-left: 20px;
+}
+
+.toc {
+    display: none;
+}
+
+@media only screen and (min-width: 601px) {
+    .toc {
+        display: block;
+        width: 240px;
+        float: left;
+        padding: 1em 1em 4em 0.5em;
+        border-right: 1px solid #e8e8e8;
+    }
+
+    .toc h2 {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .toc ul {
+        list-style: none;
+        margin: 0 auto;
+        width: 240px;
+    }
+
+    .toc ul li {
+        line-height: 1em;
+    }
+
+    .toc ul li a {
+        color: #111;
+        display: inline-block;
+        width: 93%;
+        line-height: 2.5em;
+        background-image: url("/images/dot.png");
+        background-repeat: repeat-x;
+        background-position: 100% 61%;
+        background-size: 4px;
+    }
+
+    .toc ul li a:hover {
+        color: #1e5fb6;
+    }
+
+    .toc ul li a span {
+        font-family: Inconsolata, Helvetica, sans-serif;
+        background-color: #fdfdfd;
+        padding: 0 0.15em;
+    }
+
+    .toc ul li a span.left {
+        float: left;
+    }
+
+    .toc ul li a span.right {
+        float: right;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .toc {
+        width: 340px;
+    }
+}
+
+.page {
+    padding: 1em;
+}
+
+.page h1 {
+    font-size: 1.5em;
+}
+
+@media only screen and (min-width: 601px) {
+    .page {
+        padding: 1em 1em 1em 2em;
+        margin-left: 280px;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .page {
+        margin-left: 380px;
+    }
+}
+
+.post-list-item {
+    margin-bottom: 2em;
+}
+
+h5 {
+    font-family: Inconsolata, Helvetica, sans-serif;
+    margin-bottom: 15px;
+}
+
+h1.post-title {
+    margin-bottom: 0;
+}
+
+.post-content {
+    margin-bottom: 3em;
+}
+
+.post-content p, .post-content ol, .post-content ul {
+    line-height: 1.75em;
+}
+
+h1, h3 {
+    font-family: Roboto, Helvetica, sans-serif;
+}

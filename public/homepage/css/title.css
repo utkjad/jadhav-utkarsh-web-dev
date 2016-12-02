@@ -1,0 +1,19 @@
+.marathi {
+    font-family: 'Yatra One', cursive;
+    font-size: 2em;
+    color: #7b080c;
+}
+
+@media (max-width: 320px) {
+    .marathi {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .marathi {
+        font-family: 'Yatra One', cursive;
+        font-size: 4em;
+        color: #7b080c;
+    }
+}

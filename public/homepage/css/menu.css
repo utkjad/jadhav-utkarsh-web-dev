@@ -1,0 +1,66 @@
+/*
+Sidebar
+*/
+.sidebar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        padding-top: 20px;
+        border-right: solid 2px;
+        border-color: #7b080c;
+        font-family: 'Gentium Book Basic', serif;
+        background-color: #FDFDFD;
+        font-size: medium;
+        display: block;
+        height: 100%;
+        padding-right: 0;
+    }
+
+    .sidebar ul {
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    .sidebar ul li {
+        list-style-type: none;
+        margin: 0px;
+    }
+
+    .sidebar ul li a {
+        color: #111;
+        display: inline-block;
+        width: 93%;
+        line-height: 2.5em;
+        background-image: url(dot.png);
+        background-repeat: repeat-x;
+        background-position: 100% 61%;
+        background-size: 4px;
+    }
+
+    .sidebar ul li a:hover {
+        color: #7b080c;
+        display: inline-block;
+        width: 93%;
+        line-height: 2.5em;
+        background-image: url(dot_maroon.png);
+        background-repeat: repeat-x;
+        background-position: 100% 61%;
+        background-size: 4px;
+        opacity: 1;
+
+    }
+
+    .sidebar ul li a span {
+        background-color: #FDFDFD;
+    }
+
+    .sidebar ul li a span.right {
+        float: right;
+    }
+
+    .sidebar ul li a span.left {
+        float: left;
+    }
+}

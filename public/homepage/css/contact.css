@@ -1,0 +1,50 @@
+/*----------------------------------------*/
+/*-------------Contact--------------------*/
+/*----------------------------------------*/
+.contact ul li {
+    list-style-type: none;
+}
+
+.contact ul li a {
+    color: #111;
+    display: inline-block;
+    width: 50%;
+    line-height: 2.5em;
+    background-image: url(dot.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+}
+
+.contact ul li a:hover {
+    color: #7b080c;
+    display: inline-block;
+    width: 50%;
+    line-height: 2.5em;
+    background-image: url(dot_maroon.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+    opacity: 1;
+
+}
+
+.contact ul li a span {
+    background-color: #FDFDFD;
+}
+
+.contact ul li a span.right {
+    float: right;
+}
+
+.contact ul li a span.left {
+    float: left;
+}
+
+.contact {
+    font-size: medium;
+}
+
+/*----------------------------------------*/
+/*-------------END CONTACT----------------*/
+/*----------------------------------------*/

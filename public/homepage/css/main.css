@@ -1,19 +1,12 @@
 body {
-    padding-top: 120px;
-    margin-left: 10%;
-    margin-right: 10%;
+    padding-top: 60px;
     background-color: #FDFDFD;
 }
 
-.container-fluid {
-    padding: 0 0 0 0;
-}
-
 .navbar {
-    margin-left: 10%;
-    margin-right: 10%;
     padding: 0 0 0 0;
-    line-height: 120px;
+    position: fixed;
+    line-height: 60px;
     text-align: center;
 }
 
@@ -30,237 +23,77 @@ body {
     opacity: 0.8;
     float: none;
     font-family: 'Righteous', serif;
-    font-size: 4em;
-    color: #7b080c;
-
-}
-
-.marathi {
-    font-family: 'Yatra One', cursive;
-    font-size: 4em;
+    font-size: 2em;
     color: #7b080c;
 }
 
-.photo {
-    margin: 2px 2px 2px 2px;
-    border-color: #7b080c;
-    border: solid;
-    border-width: 1.5px;
-    padding: 2px 2px 2px 2px;
+.navbar-down {
+    border-top: solid;
+    border-top-width: 2px;
 }
-
-.photo-icon {
-    padding: 3px 3px 3px 3px;
-    height: 50px;
-    width: 50px;
-}
-
-.photo-icon-company {
-    padding: 3px 3px 3px 3px;
-    height: 50px;
-    max-width: 100px;
-}
-
-/*----------------------------------------*/
-/*-------------RESUME--------------------*/
-/*----------------------------------------*/
-.resume section h4 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-.section-title {
-    padding-top: 10px;
-}
-
-.resume section h4 {
-    color: #111;
-    display: inline-block;
-    width: 60%;
-    /*line-height: 1em;*/
-    background-image: url(dot.png);
-    background-repeat: repeat-x;
-    background-position: 100% 61%;
-    background-size: 4px;
-}
-
-.resume section h4:hover {
-    /*hope is all we have!*/
-    color: #7b080c;
-    display: inline-block;
-    width: 100%;
-    /*line-height: 2.5em;*/
-    background-image: url(dot_maroon.png);
-    background-repeat: repeat-x;
-    background-position: 100% 61%;
-    background-size: 4px;
-}
-
-.resume section .summary h4 {
-
-}
-
-.resume section h4 span {
-    background-color: #FDFDFD;
-}
-
-.resume section ul {
-    list-style-type: none;
-}
-
-.resume span.right {
-    float: right;
-}
-
-.resume span.left {
-    float: left;
-}
-
-/*----------------------------------------*/
-/*-------------END RESUME----------------*/
-/*----------------------------------------*/
-
-/*----------------------------------------*/
-/*-------------Contact--------------------*/
-/*----------------------------------------*/
-.contact ul li {
-    list-style-type: none;
-}
-
-.contact ul li a {
-    color: #111;
-    display: inline-block;
-    width: 50%;
-    line-height: 2.5em;
-    background-image: url(dot.png);
-    background-repeat: repeat-x;
-    background-position: 100% 61%;
-    background-size: 4px;
-}
-
-.contact ul li a:hover {
-    color: #7b080c;
-    display: inline-block;
-    width: 50%;
-    line-height: 2.5em;
-    background-image: url(dot_maroon.png);
-    background-repeat: repeat-x;
-    background-position: 100% 61%;
-    background-size: 4px;
-    opacity: 1;
-
-}
-
-.contact ul li a span {
-    background-color: #FDFDFD;
-}
-
-.contact ul li a span.right {
-    float: right;
-}
-
-.contact ul li a span.left {
-    float: left;
-}
-
-.contact {
-    font-size: medium;
-}
-
-/*----------------------------------------*/
-/*-------------END CONTACT----------------*/
-/*----------------------------------------*/
 
 .inverse-sidebar {
     font-family: 'Gentium Book Basic', serif;
     font-size: medium;
     color: black;
     text-align: justify;
-    padding-top: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-    overflow-y: scroll;
-    margin-bottom: 40px;
-}
-
-/*
-Sidebar
-*/
-.sidebar {
-    padding-top: 20px;
-    display: none;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    /*overflow-y: scroll;*/
+    margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
-    .sidebar {
-        border-right: solid 2px;
-        border-color: #7b080c;
-        font-family: 'Gentium Book Basic', serif;
+    body {
+        padding-top: 120px;
+        margin-left: 10%;
+        margin-right: 10%;
         background-color: #FDFDFD;
-        font-size: medium;
-        display: block;
-        height: 100%;
-        padding-right: 0;
     }
 
-    .sidebar ul {
-        padding-left: 20px;
-        margin-top: 10px;
-    }
-    .sidebar ul li {
-        list-style-type: none;
-        margin: 0px;
-    }
-
-    .sidebar ul li a {
-        color: #111;
-        display: inline-block;
-        width: 93%;
-        line-height: 2.5em;
-        background-image: url(dot.png);
-        background-repeat: repeat-x;
-        background-position: 100% 61%;
-        background-size: 4px;
+    .navbar {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 0 0 0 0;
+        line-height: 120px;
+        text-align: center;
     }
 
-    .sidebar ul li a:hover {
+    .navbar-header {
+        background-color: #FBA519;
+        float: left;
+        width: 100%;
+        border-bottom: solid;
+        border-bottom-width: 2px;
+        border-color: #7b080c;
+    }
+
+    .navbar-brand {
+        opacity: 0.8;
+        float: none;
+        font-family: 'Righteous', serif;
+        font-size: 4em;
         color: #7b080c;
-        display: inline-block;
-        width: 93%;
-        line-height: 2.5em;
-        background-image: url(dot_maroon.png);
-        background-repeat: repeat-x;
-        background-position: 100% 61%;
-        background-size: 4px;
-        opacity: 1;
 
+    }
+
+    .inverse-sidebar {
+        font-family: 'Gentium Book Basic', serif;
+        font-size: medium;
+        color: black;
+        text-align: justify;
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        overflow-y: scroll;
+        margin-bottom: 40px;
+    }
+
+    .navbar-down {
+        display: none;
     }
     .fa-lg {
         vertical-align: 0;
     }
-
-    .sidebar ul li a span {
-        background-color: #FDFDFD;
-    }
-
-    .sidebar ul li a span.right {
-        float: right;
-    }
-
-    .sidebar ul li a span.left {
-        float: left;
-    }
-
-    .nav-sidebar {
-        display: block;
-    }
-
-    .ngview {
-        /*margin-left : 300px;*/
-    }
-
-    .element {
-
-    }
-
 }

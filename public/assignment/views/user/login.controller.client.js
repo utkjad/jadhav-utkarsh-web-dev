@@ -17,10 +17,10 @@
                 var promise  = UserService.findUserByCredentials(user.username, user.password);
                 promise
                     .success(function (user) {
-                        if (user){
+                        if (user != "0") {
                             $location.url("user/" + user._id);
                         } else{
-                            vm.alert = "User not found";
+                            vm.alert = "No such user found!!!";
                         }
                     })
             }

@@ -1,0 +1,54 @@
+/*----------------------------------------*/
+/*-------------RESUME--------------------*/
+/*----------------------------------------*/
+.resume section h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.section-title {
+    padding-top: 10px;
+}
+
+.resume section h4 {
+    color: #111;
+    display: inline-block;
+    width: 60%;
+    /*line-height: 1em;*/
+    background-image: url(dot.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+}
+
+.resume section h4:hover {
+    /*hope is all we have!*/
+    color: #7b080c;
+    display: inline-block;
+    width: 100%;
+    /*line-height: 2.5em;*/
+    background-image: url(dot_maroon.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+}
+
+.resume section h4 span {
+    background-color: #FDFDFD;
+}
+
+.resume section ul {
+    list-style-type: none;
+}
+
+.resume span.right {
+    float: right;
+}
+
+.resume span.left {
+    float: left;
+}
+
+/*----------------------------------------*/
+/*-------------END RESUME----------------*/
+/*----------------------------------------*/
