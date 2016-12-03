@@ -8,7 +8,6 @@
 
         function link(scope, element, attributes) {
             var start = -1, end = -1;
-            console.log("KARTHIK");
             console.log(element);
 
             $(element)

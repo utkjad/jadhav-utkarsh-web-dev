@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <h1>{{model.movie.Title}}</h1>
+    <div class = "row">
+
+        <div class = "col-xs-6">
+            <div>
+                Directed BY: {{model.movie.Director}}
+            </div>
+            <div>
+                Actors:{{model.movie.Actors.split(',')}}
+                <ul>
+                    <li ng-repeat="actor in model.movie.Actors.split(',')">{{actor}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class = "col-xs-6">
+            <img ng-src="{{model.movie.Poster}}" height="200px">
+        </div>
+    </div>
+
+
+
+
+</div>
+{"Title":"Dil Chahta Hai",
+"Year":"2001",
+"Rated":"NOT RATED",
+"Released":"24 Jul 2001",
+"Runtime":"183 min",
+"Genre":"Comedy, Drama, Romance",
+"Director":"Farhan Akhtar",
+"Writer":"Kassim Jagmagia (story co-developed by), Farhan Akhtar (story), Farhan Akhtar (screenplay), Farhan Akhtar (dialogue)",
+"Actors":"Aamir Khan, Saif Ali Khan, Akshaye Khanna, Preity Zinta",
+"Plot":"Three inseparable childhood friends are just out of college. Nothing comes between them - until they each fall in love, and their wildly different approaches to relationships creates tension.",
+"Language":"Hindi, English, Urdu",
+"Country":"India",
+"Awards":"21 wins & 36 nominations.",
+"Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BOTIyODkwNzY2NF5BMl5BanBnXkFtZTgwMzE5NDUzNTE@._V1_SX300.jpg",
+"Metascore":"N/A",
+"imdbRating":"8.2",
+"imdbVotes":"48,670",
+"imdbID":"tt0292490",
+"Type":"movie",
+"Response":"True"}

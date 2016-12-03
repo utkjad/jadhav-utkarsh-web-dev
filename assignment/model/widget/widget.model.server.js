@@ -22,6 +22,7 @@ module.exports = function () {
         return Widget
             .find({_page: pageId})
             .then(function (widgets) {
+                // starts with 0 and ....
                 widget.index = widgets.length;
                 return Widget.create(widget);
             });

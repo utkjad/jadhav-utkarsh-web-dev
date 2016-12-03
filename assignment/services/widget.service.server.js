@@ -1,5 +1,5 @@
 module.exports = function (app, model) {
-    console.log("In SERVER widget.service.server.js")
+    console.log("In SERVER widget.service.server.js");
     var widgetModel = model.widgetModel;
 
     var multer = require('multer');
