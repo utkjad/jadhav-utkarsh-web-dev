@@ -27,8 +27,7 @@
                 "email": "jadhav.u@husky.neu.edu",
                 "links": ["https://utkarshj.herokuapp.com/homepage/files/utkarsh_resume.pdf",
                     "https://open.edx.org/blog/intern-spotlight-utkarsh-jadhav",
-                    "https://utkarshj.herokuapp.com",
-                    
+                    "https://utkarshj.herokuapp.com"
                 ]
             };
 
