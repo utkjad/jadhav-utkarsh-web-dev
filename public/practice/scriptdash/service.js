@@ -26,6 +26,7 @@
                 " do cycling, bird-watching, or calligraphy.",
                 "email": "jadhav.u@husky.neu.edu",
                 "links": ["https://utkarshj.herokuapp.com/homepage/files/utkarsh_resume.pdf",
+                    "https://utkarshj.herokuapp.com/homepage/files/CoverLetterSD.pdf",
                     "https://open.edx.org/blog/intern-spotlight-utkarsh-jadhav",
                     "https://utkarshj.herokuapp.com"
                 ]
