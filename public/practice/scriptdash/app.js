@@ -1,3 +1,4 @@
-/**
- * Created by Utkarsh J
- */
+(function () {
+    angular
+        .module("SDApp",[]);
+})();
