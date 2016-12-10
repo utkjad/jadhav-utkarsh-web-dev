@@ -4,9 +4,9 @@
     color: #7b080c;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 600px) {
     .marathi {
-        display: none;
+        display: None !important;
     }
 }
 

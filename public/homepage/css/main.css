@@ -8,28 +8,26 @@ body {
     position: fixed;
     line-height: 60px;
     text-align: center;
-}
-
-.navbar-header {
     background-color: #FBA519;
-    float: left;
-    width: 100%;
     border-bottom: solid;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-color: #7b080c;
 }
 
+.collapse .navbar-collapse {
+    display: block !important;
+}
+
+.navbar-header {
+    float: left;
+    width: 70%;
+}
 .navbar-brand {
     opacity: 0.8;
     float: none;
     font-family: 'Righteous', serif;
     font-size: 2em;
     color: #7b080c;
-}
-
-.navbar-down {
-    border-top: solid;
-    border-top-width: 2px;
 }
 
 .inverse-sidebar {
@@ -52,21 +50,24 @@ body {
         background-color: #FDFDFD;
     }
 
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
     .navbar {
         margin-left: 10%;
         margin-right: 10%;
         padding: 0 0 0 0;
         line-height: 120px;
         text-align: center;
+        border-bottom: solid;
+        border-bottom-width: 2px;
+        border-color: #7b080c;
     }
 
     .navbar-header {
         background-color: #FBA519;
         float: left;
         width: 100%;
-        border-bottom: solid;
-        border-bottom-width: 2px;
-        border-color: #7b080c;
     }
 
     .navbar-brand {
@@ -90,9 +91,6 @@ body {
         margin-bottom: 40px;
     }
 
-    .navbar-down {
-        display: none;
-    }
     .fa-lg {
         vertical-align: 0;
     }

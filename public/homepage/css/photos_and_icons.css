@@ -16,6 +16,7 @@
 
 @media (min-width: 768px) {
     .photo {
+        display: block;
         margin: 2px 2px 2px 2px;
         border-color: #7b080c;
         border: solid;
