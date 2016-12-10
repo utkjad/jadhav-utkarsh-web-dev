@@ -1,6 +1,5 @@
-module.exports = function () {
+module.exports = function (mongoose) {
     console.log("In SERVER user.schema.server.js");
-    var mongoose = require('mongoose');
     var UserSchema = mongoose.Schema({
         username: String,
         password: String,
@@ -9,7 +8,8 @@ module.exports = function () {
         email: String,
         phone:String,
         websites: [{type: mongoose.Schema.Types.ObjectId, ref: 'Website'}],
-        dateCreates: {type: Date, default: Date.now()}
+        dateCreates: {type: Date, default: Date.now()},
+        type: {type: String, default: 'assignment'}
     }, {collection: "assignment.user"});
 
     return UserSchema;

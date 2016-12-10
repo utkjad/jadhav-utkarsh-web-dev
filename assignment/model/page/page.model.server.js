@@ -1,8 +1,7 @@
-module.exports = function () {
+module.exports = function (mongoose) {
     console.log("In SERVER page.model.server.js");
-    var mongoose = require('mongoose');
-    mongoose.Promise = require('bluebird');
-    var PageSchema = require('./page.schema.server')();
+
+    var PageSchema = require('./page.schema.server')(mongoose);
     var PageModel = mongoose.model("PageModel", PageSchema);
     var api = {
         createPage: createPage,

@@ -1,4 +1,5 @@
 module.exports = function (mongoose) {
+    console.log("PROJECT SERVER Movie.model.server.js");
 
     var MovieSchema = require('./movie.schema.server')(mongoose);
     var MRMovie = mongoose.model('MRMovie', MovieSchema);

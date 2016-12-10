@@ -1,4 +1,5 @@
 module.exports = function (app, models, security) {
+    console.log("PROJECT SERVER User.service.server.js");
 
     var movieModel = models.movieModel;
     var userModel = models.userModel;

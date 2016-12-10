@@ -1,5 +1,5 @@
 module.exports = function (app, models) {
-
+    console.log("PROJECT SERVER Movie.service.server.js");
     var movieModel = models.movieModel;
 
     app.post('/mr/movie', addMovie);

@@ -1,8 +1,6 @@
-module.exports = function () {
+module.exports = function (mongoose) {
     console.log("In SERVER website.model.server.js");
-    var mongoose = require("mongoose");
-    mongoose.Promise = require('bluebird');
-    var WebsiteSchema = require("./website.schema.server")();
+    var WebsiteSchema = require("./website.schema.server")(mongoose);
     var WebsiteModel = mongoose.model("WebsiteModel", WebsiteSchema);
 
 

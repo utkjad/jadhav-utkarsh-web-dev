@@ -1,5 +1,5 @@
 module.exports = function (mongoose) {
-
+    console.log("PROJECT SERVER User.model.server.js");
     var UserSchema = require('./user.schema.server')(mongoose);
     var MRUser = mongoose.model('MRUser', UserSchema);
 

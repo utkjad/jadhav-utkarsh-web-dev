@@ -1,11 +1,9 @@
-module.exports = function (app) {
+module.exports = function (app, database, security) {
     console.log("In SERVER Assignment/app.js");
 
-    // Every data access points explained here as objects.
-    // ORM
-    var models = require("./model/models.server")();
+    var models = database.wamModels();
 
-    require("./services/user.service.server.js")(app, models);
+    require("./services/user.service.server.js")(app, models, security);
     require("./services/website.service.server.js")(app, models);
     require("./services/page.service.server.js")(app, models);
     require("./services/widget.service.server.js")(app, models);

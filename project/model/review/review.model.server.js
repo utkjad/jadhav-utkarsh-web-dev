@@ -1,5 +1,5 @@
 module.exports = function (mongoose) {
-
+    console.log("PROJECT SERVER Review.model.server.js");
     var ReviewSchema = require('./review.schema.server')(mongoose);
     var MRReview = mongoose.model('MRReview', ReviewSchema);
 

@@ -3,6 +3,24 @@
         .module('WebAppMaker')
         .config(Config);
 
+    // resolve loggedIn
+    // TODO
+    var checkLoggedIn = function ($q, $timeout, $http, $location, $rootScope) {
+        var deferred = $q.defer();
+        var url = "/api/loggedin";
+        $http.get(url)
+            .success(function (user) {
+                $rootScope.errorMessage = null;
+                if (user !== '0') {
+                    $rootScope.currentUser = user;
+                    deferred.resolve();
+                } else {
+                    deferred.reject();
+                    $location.url("/login");
+                }
+            });
+        return deferred.promise;
+    };
 
     function Config($routeProvider) {
         $routeProvider
@@ -20,10 +38,11 @@
                 controller: "RegisterController",
                 controllerAs: "model"
             })
-            .when("/user/:uid", {
+            .when("/user", {
                 templateUrl: "views/user/profile.view.client.html",
                 controller: "ProfileController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {loggedIn: checkLoggedIn}
             })
 
             .when("/user/:uid/website", {

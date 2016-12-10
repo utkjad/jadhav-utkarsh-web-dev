@@ -17,7 +17,7 @@
         function register(user) {
             if(user.username){
                 if(user.password === user.verifyPassword){
-                    var promise  = UserService.createUser(user);
+                    var promise = UserService.register(user);
                     promise
                         .success(function (returnedUser) {
                             $location.url("/user/" + returnedUser._id);

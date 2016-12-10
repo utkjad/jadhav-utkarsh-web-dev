@@ -1,5 +1,5 @@
 module.exports = function (mongoose) {
-
+    console.log("PROJECT SERVER User.schema.server.js");
     var UserSchema = mongoose.Schema({
         username: {type: String, required: true, unique: true},
         password: String,

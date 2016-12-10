@@ -1,4 +1,5 @@
 module.exports = function (mongoose) {
+    console.log("PROJECT SERVER Review.schema.server.js");
     var ReviewSchema = mongoose.Schema({
         title: String,
         description: String,

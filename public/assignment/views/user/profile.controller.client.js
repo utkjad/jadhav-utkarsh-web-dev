@@ -3,9 +3,9 @@
         .module("WebAppMaker")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($routeParams, $location, UserService ) {
+    function ProfileController($routeParams, $location, $rootScope, UserService) {
         var vm = this;
-        vm.userId = $routeParams.uid;
+        vm.userId = $rootScope.currentUser._id;
         vm.updateUser= updateUser;
         vm.website = website;
         vm.logout = logout;
@@ -58,7 +58,15 @@
         }
 
         function logout() {
-            $location.url("/login");
+            UserService
+                .logout()
+                .success(function (res) {
+                    console.log("user logged out successfully!");
+                    $location.url("/login");
+                })
+                .error(function (err) {
+                    vm.alert = "Cannot logout!"
+                })
         }
 
         // clear your previous message first before alerting anything

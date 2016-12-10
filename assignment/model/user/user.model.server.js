@@ -1,8 +1,6 @@
-module.exports = function () {
+module.exports = function (mongoose) {
     console.log("In SERVER user.model.server.js");
-    var mongoose = require('mongoose');
-    mongoose.Promise = require('bluebird');
-    var UserSchema = require('./user.schema.server')();
+    var UserSchema = require('./user.schema.server')(mongoose);
     var UserModel = mongoose.model("UserModel", UserSchema);
 
     var api = {
@@ -11,9 +9,14 @@ module.exports = function () {
         updateUser: updateUser,
         deleteUser: deleteUser,
         findUserByCredential:findUserByCredential,
-        findUserByUsername: findUserByUsername
+        findUserByUsername: findUserByUsername,
+        findUserByFacebookId: findUserByFacebookId
     };
     return api;
+
+    function findUserByFacebookId(facebookId) {
+        return UserModel.findOne({'facebook.id': facebookId});
+    }
 
     function findUserByUsername(username) {
         return UserModel

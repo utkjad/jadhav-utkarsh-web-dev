@@ -1,4 +1,5 @@
 module.exports = function (app, models) {
+    console.log("PROJECT SERVER Review.service.server.js");
 
     var movieModel = models.movieModel;
     var reviewModel = models.reviewModel;

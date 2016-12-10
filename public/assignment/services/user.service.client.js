@@ -11,9 +11,27 @@
             updateUser:updateUser,
             deleteUser:deleteUser,
             findUserByCredentials: findUserByCredentials,
-            findUserByID: findUserByID
+            findUserByID: findUserByID,
+            login: login,
+            logout: logout,
+            register: register
         };
         return api;
+
+        function login(user) {
+            var url = "/api/login";
+            return $http.post(url, user);
+        }
+
+        function logout() {
+            var url = "/api/logout";
+            return $http.post(url);
+        }
+
+        function register(user) {
+            var url = "/api/register";
+            return $http.post(url, user);
+        }
 
         function createUser(user) {
             var url = "/api/user/";

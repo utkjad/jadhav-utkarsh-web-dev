@@ -1,6 +1,5 @@
-module.exports = function () {
+module.exports = function (mongoose) {
     console.log("In SERVER page.schema.server.js");
-    var mongoose = require('mongoose');
     var PageSchema = mongoose.Schema({
         _website: {type: mongoose.Schema.Types.ObjectId, ref: 'Website'},
         title: {type: String, required: true},
