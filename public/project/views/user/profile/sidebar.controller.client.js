@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module('BBBApp')
+        .module('MRApp')
         .controller('SidebarController', SidebarController);
 
     function SidebarController($stateParams, UserService) {

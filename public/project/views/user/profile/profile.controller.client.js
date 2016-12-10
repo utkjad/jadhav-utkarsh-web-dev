@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module('BBBApp')
+        .module('MRApp')
         .controller('ProfileController', ProfileController);
 
     function ProfileController($stateParams) {

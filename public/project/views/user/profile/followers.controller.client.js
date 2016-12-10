@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module('BBBApp')
+        .module('MRApp')
         .controller('FollowersController', FollowersController);
 
     function FollowersController($q, $stateParams, UserService) {

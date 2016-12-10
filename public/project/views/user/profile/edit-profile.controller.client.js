@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module('BBBApp')
+        .module('MRApp')
         .controller('EditProfileController', EditProfileController);
 
     function EditProfileController(UserService) {
@@ -17,7 +17,7 @@
                     var user = response.data;
                     if (user) {
                         vm.user = user;
-                        vm.updateProfileApi = "/bbb/user/" + user._id;
+                        vm.updateProfileApi = "/mr/user/" + user._id;
                         UserService
                             .findUserById(vm.user._id)
                             .then(function (response) {

@@ -6,28 +6,64 @@
     <meta charset="UTF-8">
     <title>Web App Maker</title>
 
+    <!--Bootstrap and jquery as scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!--CDN Scripts-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
+    <!--Angular specifics-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
-
-    <!--Project level scripts-->
-    <script src="app.js"></script>
-    <script src="config.js"></script>
-
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.13/textAngular.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.13/textAngular-rangy.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.13/textAngular-sanitize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.13/textAngular.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-</head>
-<body>
-<h1>Project Home Page</h1>
-<div ng-view>
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
 
+    <!--Javascript-->
+    <script src="js/loading-bar.js"></script>
+    <script src="js/ng-infinite-scroll.min.js"></script>
+    <script src="js/ng-rating.js"></script>
+
+    <!--CSS specific-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <!--TODO CSS-->
+    <!--Project level scripts-->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <!--client side services-->
+    <script src="services/movie.service.client.js"></script>
+    <script src="services/review.service.client.js"></script>
+    <script src="services/user.service.client.js"></script>
+
+    <!--User Controllers-->
+    <script src="views/user/login/login.controller.client.js"></script>
+    <script src="views/user/profile/edit-profile.controller.client.js"></script>
+    <script src="views/user/profile/followers.controller.client.js"></script>
+    <script src="views/user/profile/following.controller.client.js"></script>
+    <script src="views/user/profile/likes.controller.client.js"></script>
+    <script src="views/user/profile/profile.controller.client.js"></script>
+    <script src="views/user/profile/reviews.controller.client.js"></script>
+    <script src="views/user/profile/sidebar.controller.client.js"></script>
+    <script src="views/user/register/register.controller.client.js"></script>
+
+    <!--Other than User controllers-->
+    <script src="views/admin/admin.controller.client.js"></script>
+    <script src="views/details/details.controller.client.js"></script>
+    <script src="views/header/header.controller.client.js"></script>
+    <script src="views/home/home.controller.client.js"></script>
+    <script src="views/home/home-popular.controller.client.js"></script>
+    <script src="views/home/home-result.controller.client.js"></script>
+    <script src="views/main/main.controller.client.js"></script>
+</head>
+<body ng-controller="MainController as mainControllerModel">
+<h1>Project Home Page</h1>
+<div class="container-fluid">
+    <div ui-view></div>
 </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module('BBBApp')
+        .module('MRApp')
         .controller('RegisterController', RegisterController);
 
     function RegisterController($state, UserService) {

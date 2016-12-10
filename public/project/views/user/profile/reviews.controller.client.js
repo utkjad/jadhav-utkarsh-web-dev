@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module('BBBApp')
+        .module('MRApp')
         .controller('ReviewsController', ReviewsController);
 
     function ReviewsController($stateParams, UserService, ReviewService) {

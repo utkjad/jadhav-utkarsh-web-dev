@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module('BBBApp')
+        .module('MRApp')
         .controller('LikesController', LikesController);
 
     function LikesController($q, $stateParams, UserService, MovieService) {

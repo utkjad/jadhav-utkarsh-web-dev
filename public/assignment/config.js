@@ -10,7 +10,6 @@
                 redirectTo: '/login'
             })
 
-            // Specific to views/user
             .when("/login", {
                 templateUrl: "views/user/login.view.client.html",
                 controller: "LoginController",
@@ -27,7 +26,6 @@
                 controllerAs: "model"
             })
 
-            // Specific to views/website
             .when("/user/:uid/website", {
                 templateUrl: "views/website/website-list.view.client.html",
                 controller : "WebsiteListController",
@@ -44,7 +42,6 @@
                 controllerAs : "model"
             })
 
-            // Specific to views/page
             .when("/user/:uid/website/:wid/page", {
                 templateUrl: "views/page/page-list.view.client.html",
                 controller : "PageListController",
@@ -61,7 +58,6 @@
                 controllerAs : "model"
             })
 
-            // Specific to views/widget
             .when("/user/:uid/website/:wid/page/:pid/widget", {
                 templateUrl: "views/widget/widget-list.view.client.html",
                 controller: "WidgetListController",
@@ -78,7 +74,6 @@
                 controllerAs: "model"
             })
 
-            // Default case
             .otherwise({
                     redirectTo: '/login'
                 }

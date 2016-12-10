@@ -19,6 +19,7 @@
         vm.clear = clear;
 
         function init() {
+            console.log("In Admin client services");
             vm.selected = -1;
             UserService
                 .findAllUsersForAdmin()
@@ -34,15 +35,16 @@
                         .createUserByAdmin(user)
                         .then(handleSuccess, handleFailure);
                 } else {
-                    vm.error = "Please enter username";
+                    vm.error = "Please enter username!!!";
                 }
             } else {
-                vm.error = "Please enter user details";
+                vm.error = "Please enter user details!!!";
             }
 
         }
 
         function order(predicate) {
+            //TODO
             vm.reverse = (vm.predicate === predicate) ? !vm.reverse : false;
             vm.predicate = predicate;
         }
@@ -73,9 +75,9 @@
 
         function handleFailure(err) {
             if (err.status === 409)
-                vm.error = "Username taken";
+                vm.error = "Username already taken!!!";
             else
-                vm.error = "Unable to create user";
+                vm.error = "Unable to create user!";
         }
 
         function clear() {
