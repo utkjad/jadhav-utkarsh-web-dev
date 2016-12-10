@@ -1,0 +1,46 @@
+<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 div-login div-login-main details">
+    <div class="row" ng-show="loginControllerModel.error">
+        <div class="alert alert-danger alert-box" role="alert">
+            <b>Error! </b>
+            {{loginControllerModel.error}}
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <h3 class="h3-login-main">Log In</h3>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                <input type="text" class="form-control" placeholder="Username"
+                       ng-model="loginControllerModel.user.username">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-lock"></i>
+                    </span>
+                <input type="password" class="form-control" placeholder="Password"
+                       ng-model="loginControllerModel.user.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <a href="" class="btn btn-success btn-block"
+               ng-click="loginControllerModel.login(loginControllerModel.user)">Sign In</a>
+        </div>
+        <div class="form-group">
+            <a href="/bbb/auth/facebook"
+               class="btn btn-primary btn-block">
+                <span class="fa fa-facebook"></span>
+                Facebook
+            </a>
+        </div>
+        <div class="row text-right">
+            <a ui-sref="register">Not a member?</a>
+        </div>
+    </form>
+</div>

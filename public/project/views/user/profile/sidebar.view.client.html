@@ -1,0 +1,64 @@
+<div id="sidebar-wrapper" ng-controller="SidebarController as sidebarControllerModel">
+    <ul class="sidebar-nav">
+        <div class="margin-top text-align-center">
+            <div class="display-inline-block">
+                <a href="">
+                    <img class="thumbnail profile-photo"
+                         src="/project/images/profile-image.png"
+                         alt=""
+                         ng-show="!sidebarControllerModel.navUser.imgUrl">
+                    <img class="thumbnail profile-photo"
+                         ng-src="{{sidebarControllerModel.navUser.imgUrl}}"
+                         alt=""
+                         ng-show="sidebarControllerModel.navUser.imgUrl">
+                </a>
+                <div ng-show="sidebarControllerModel.user._id != sidebarControllerModel.navUserId">
+                    <a href=""
+                       ng-click="sidebarControllerModel.follow()"
+                       ng-hide="sidebarControllerModel.alreadyFollowing"
+                       class="btn-sm btn-success">Follow
+                    </a>
+                    <a href=""
+                       ng-click="sidebarControllerModel.unfollow()"
+                       ng-show="sidebarControllerModel.alreadyFollowing"
+                       class="btn-sm btn-danger">Unfollow
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-margin"
+                 ng-show="sidebarControllerModel.user._id != sidebarControllerModel.navUserId"></div>
+        </div>
+
+        <li ui-sref-active="active" ng-show="sidebarControllerModel.user._id == sidebarControllerModel.navUserId"
+            ng-hide="sidebarControllerModel.user._id != sidebarControllerModel.navUserId">
+            <a ui-sref=".edit-profile({userId: profileControllerModel.userId})">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                Edit Profile
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-show="sidebarControllerModel.user">
+            <a ui-sref=".followers({userId: profileControllerModel.userId})">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Followers
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-show="sidebarControllerModel.user">
+            <a ui-sref=".following({userId: profileControllerModel.userId})">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Following
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-show="sidebarControllerModel.user">
+            <a ui-sref=".reviews({userId: profileControllerModel.userId})">
+                <i class="fa fa-comments" aria-hidden="true"></i>
+                Reviews
+            </a>
+        </li>
+        <li ui-sref-active="active" ng-show="sidebarControllerModel.user">
+            <a ui-sref=".likes({userId: profileControllerModel.userId})">
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                Likes
+            </a>
+        </li>
+    </ul>
+</div>

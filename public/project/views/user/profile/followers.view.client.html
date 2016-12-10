@@ -1,0 +1,82 @@
+<div class="row text-center">
+    <div class="col-xs-4 col-sm-6"></div>
+    <div class="col-xs-4 col-sm-3">
+        <a ui-sref="profile.followers({userId: followersControllerModel.navUser._id})">
+            <div class="row">
+                <h5>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Followers
+                </h5>
+            </div>
+            <div class="row">
+                {{followersControllerModel.navUser.followers.length}}
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-4 col-sm-3">
+        <a ui-sref="profile.following({userId: followersControllerModel.navUser._id})">
+            <div class="row">
+                <h5>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Following
+                </h5>
+            </div>
+            <div class="row">
+                {{followersControllerModel.navUser.following.length}}
+            </div>
+        </a>
+    </div>
+</div>
+
+<h1 class="page-header less-top-margin">Followers</h1>
+
+<div class="row" ng-hide="followersControllerModel.navUser.followers.length > 0">
+    <div class="alert alert-info alert-box" role="alert">
+        <div ng-show="followersControllerModel.user._id == followersControllerModel.navUserId">
+            <b>Info! </b>
+            You do not have any followers yet.
+        </div>
+        <div ng-hide="followersControllerModel.user._id == followersControllerModel.navUserId">
+            <b>Info! </b>
+            User does not have any followers yet.
+        </div>
+    </div>
+</div>
+
+<div ng-repeat="user in followersControllerModel.users">
+    <div class="media">
+        <a class="media-left" href="">
+            <img class="media-object media-object-movie img-circle"
+                 src="/project/images/profile-image.png"
+                 alt=""
+                 ng-show="!user.imgUrl">
+            <img class="media-object media-object-movie img-circle"
+                 ng-src="{{user.imgUrl}}"
+                 alt=""
+                 ng-show="user.imgUrl">
+        </a>
+        <div class="media-body">
+            <h3 class="media-heading">
+                <a ui-sref="profile.reviews({userId: user._id})">
+                    {{user.firstName + " " + user.lastName}}
+                </a>
+            </h3>
+            <div ng-hide="user.itsMe">
+                <a href=""
+                   ng-click="followersControllerModel.follow($index)"
+                   ng-hide="user.alreadyFollowing"
+                   class="btn-sm btn-success">Follow
+                </a>
+            </div>
+            <div ng-hide="user.itsMe">
+                <a href=""
+                   ng-click="followersControllerModel.unfollow($index)"
+                   ng-show="user.alreadyFollowing"
+                   class="btn-sm btn-danger">Unfollow
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+</div>

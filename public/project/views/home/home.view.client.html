@@ -1,0 +1,48 @@
+<div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="container">
+            <div class="carousel-caption">
+                <h1 id="myBrand" class="brandname">Big Bucket of Blockbusters</h1>
+                <p id="myCaption">Reach into the bottomless bucket</p>
+
+            </div>
+        </div>
+
+        <div class="carousel-inner" role="listbox">
+            <div class="item" ng-class="{active:!$index}" ng-repeat="slide in homeControllerModel.slides">
+                <img ng-src="{{slide.imageUrl}}">
+            </div>
+            <a class="left carousel-control"
+               href=""
+               ng-click="homeControllerModel.slide('prev')"
+               role="button"
+               data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </a>
+            <a class="right carousel-control"
+               href=""
+               ng-click="homeControllerModel.slide('next')"
+               role="button"
+               data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <input type="text" class="form-control search-box"
+               id="mySearchBox"
+               ng-model="homeControllerModel.movie.title"
+               ng-keypress="homeControllerModel.eventHandler($event, homeControllerModel.movie.title)"
+               placeholder="Search for a movie by title">
+        <a ui-sref="home.result({movieTitle: homeControllerModel.movie.title})"
+           class="input-group-addon search-box btn-primary btn-search">
+            <i class="glyphicon glyphicon-search"></i>
+        </a>
+    </div>
+    <br>
+
+    <div ui-view></div>
+
+</div>

@@ -1,0 +1,73 @@
+<div class="row text-center">
+    <div class="col-xs-4 col-sm-6"></div>
+    <div class="col-xs-4 col-sm-3">
+        <a ui-sref="profile.followers({userId: likesControllerModel.navUser._id})">
+            <div class="row">
+                <h5>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Followers
+                </h5>
+            </div>
+            <div class="row">
+                {{likesControllerModel.navUser.followers.length}}
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-4 col-sm-3">
+        <a ui-sref="profile.following({userId: likesControllerModel.navUser._id})">
+            <div class="row">
+                <h5>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Following
+                </h5>
+            </div>
+            <div class="row">
+                {{likesControllerModel.navUser.following.length}}
+            </div>
+        </a>
+    </div>
+</div>
+
+<h1 class="page-header less-top-margin">Likes</h1>
+
+<div class="row" ng-hide="likesControllerModel.movies.length > 0">
+    <div class="alert alert-info alert-box" role="alert">
+        <div ng-show="likesControllerModel.user._id == likesControllerModel.navUserId">
+            <b>Info! </b>
+            You have not liked any movies yet.
+        </div>
+        <div ng-hide="likesControllerModel.user._id == likesControllerModel.navUserId">
+            <b>Info! </b>
+            User has not liked any movies yet.
+        </div>
+    </div>
+</div>
+
+<div ng-repeat="movie in likesControllerModel.movies">
+    <div class="media">
+        <a class="pull-left" href="">
+            <img class="media-object media-object-movie thumbnail" ng-src={{movie.imageUrl}} alt="">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">
+                <a ui-sref="details({movieId: movie.movieId})">
+                    {{movie.title}}
+                </a>
+            </h4>
+            <h4>
+                <a href="" ng-click="likesControllerModel.like($index)"
+                   ng-hide="movie.isLiked">
+                    <i class="fa fa-thumbs-o-up orange"></i>
+                </a>
+            </h4>
+            <h4>
+                <a href="" ng-click="likesControllerModel.unlike($index)"
+                   ng-show="movie.isLiked">
+                    <i class="fa fa-thumbs-up green"></i>
+                </a>
+            </h4>
+        </div>
+    </div>
+
+    <hr>
+</div>

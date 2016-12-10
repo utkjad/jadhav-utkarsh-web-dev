@@ -1,0 +1,37 @@
+<div class="row container">
+    <h3 class="page-header h3-page-header">Popular Movies</h3>
+</div>
+
+<div class="row" ng-show="homePopularControllerModel.error">
+    <div class="alert alert-warning alert-box" role="alert">
+        <b>Warning! </b>
+        {{homePopularControllerModel.error}}
+    </div>
+</div>
+
+<div class="row"
+     infinite-scroll="homePopularControllerModel.pagingFunction()"
+     infinite-scroll-disabled='homePopularControllerModel.busy'
+     infinite-scroll-distance="1">
+    <div ng-repeat="movie in homePopularControllerModel.movies">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail box">
+                <a ui-sref="details({movieId: movie.id})">
+                    <div class="caption">
+                        <h4>{{movie.title | limitTo:26}}{{movie.title.length > 26 ? "..." : ""}}</h4>
+                    </div>
+                    <img class="img-responsive" ng-src="{{movie.imageUrl}}"/>
+                    <div class="caption">
+                        <h5>Release: {{movie.release_date}}</h5>
+                    </div>
+                    <hr class="nomargin">
+                    <div class="caption">
+                        <div class="chip">
+                            {{movie.genres[0] + " " + movie.genres[1] + " " + movie.genres[2]}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

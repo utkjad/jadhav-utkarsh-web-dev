@@ -1,0 +1,76 @@
+<div class="row text-center">
+    <div class="col-xs-4 col-sm-6"></div>
+    <div class="col-xs-4 col-sm-3">
+        <a ui-sref="profile.followers({userId: reviewsControllerModel.navUser._id})">
+            <div class="row">
+                <h5>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Followers
+                </h5>
+            </div>
+            <div class="row">
+                {{reviewsControllerModel.navUser.followers.length}}
+            </div>
+        </a>
+    </div>
+    <div class="col-xs-4 col-sm-3">
+        <a ui-sref="profile.following({userId: reviewsControllerModel.navUser._id})">
+            <div class="row">
+                <h5>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Following
+                </h5>
+            </div>
+            <div class="row">
+                {{reviewsControllerModel.navUser.following.length}}
+            </div>
+        </a>
+    </div>
+</div>
+
+<h1 class="page-header less-top-margin">Reviews</h1>
+
+<div class="row" ng-hide="reviewsControllerModel.reviews.length > 0">
+    <div class="alert alert-info alert-box" role="alert">
+        <div ng-show="reviewsControllerModel.user._id == reviewsControllerModel.navUserId">
+            <b>Info! </b>
+            You have not posted any reviews yet.
+        </div>
+        <div ng-hide="reviewsControllerModel.user._id == reviewsControllerModel.navUserId">
+            <b>Info! </b>
+            User has not posted any reviews yet.
+        </div>
+    </div>
+</div>
+
+<div ng-repeat="review in reviewsControllerModel.reviews">
+    <div class="media">
+        <a class="pull-left" href="">
+            <img class="media-object media-object-movie thumbnail" ng-src={{review.movie.imageUrl}} alt="">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">
+                <a ui-sref="details({movieId: review.movie.movieId})">
+                    {{review.movie.title}}
+                </a>
+            </h4>
+            <small>
+                        <span>
+                            <ng-rating ng-model="review.rating"
+                                       editable="false">
+                            </ng-rating>
+                        </span>
+            </small>
+            <h4 class="media-heading">
+                <small>
+                    On {{review.timestamp | date : 'mediumDate'}}
+                </small>
+            </h4>
+            <p class="text-justify">
+                {{review.description | limitTo:100}} {{review.description.length > 100 ? "..." : ""}}
+            </p>
+        </div>
+    </div>
+
+    <hr>
+</div>

@@ -1,0 +1,82 @@
+<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 div-register div-register-main details">
+    <div class="row" ng-show="registerControllerModel.error">
+        <div class="alert alert-danger alert-box" role="alert">
+            <b>Error! </b>
+            {{registerControllerModel.error}}
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <h3 class="h3-register-main">Register</h3>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-option-horizontal"></i>
+                    </span>
+                <input type="text" class="form-control" placeholder="First Name"
+                       ng-model="registerControllerModel.user.firstName" autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-option-horizontal"></i>
+                    </span>
+                <input type="text" class="form-control" placeholder="Last Name"
+                       ng-model="registerControllerModel.user.lastName">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                <input type="text" class="form-control" placeholder="Username"
+                       ng-model="registerControllerModel.user.username">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-lock"></i>
+                    </span>
+                <input type="password" class="form-control" placeholder="Password"
+                       ng-model="registerControllerModel.user.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-lock"></i>
+                    </span>
+                <input type="password" class="form-control" placeholder="Verify Password"
+                       ng-model="registerControllerModel.user.verifyPassword">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                    </span>
+                <input type="email" class="form-control" placeholder="Email"
+                       ng-model="registerControllerModel.user.email">
+            </div>
+        </div>
+        <div class="form-group">
+            <a href="" class="btn btn-success btn-block"
+               ng-click="registerControllerModel.register(registerControllerModel.user)">Sign Up</a>
+        </div>
+        <div class="form-group">
+            <a href="/bbb/auth/facebook"
+               class="btn btn-primary btn-block">
+                <span class="fa fa-facebook"></span>
+                Facebook
+            </a>
+        </div>
+        <div class="row text-right">
+            <a ui-sref="login">Already a member?</a>
+        </div>
+    </form>
+</div>

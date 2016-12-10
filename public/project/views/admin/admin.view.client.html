@@ -1,0 +1,92 @@
+<h1 class="page-header">Admin</h1>
+<h2 class="sub-header">Manage Users</h2>
+
+<div class="row" ng-show="adminControllerModel.error">
+    <div class="alert alert-danger alert-box" role="alert">
+        <b>Error! </b>
+        {{adminControllerModel.error}}
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr class="theadrow">
+            <th ng-click="adminControllerModel.order('username')" class="nowrap">
+                    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"
+                          ng-show="(adminControllerModel.predicate == 'username') && (adminControllerModel.reverse == true)"></span>
+                <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"
+                      ng-show="(adminControllerModel.predicate == 'username') && (adminControllerModel.reverse == false)"></span>
+                Username
+            </th>
+            <th>Password</th>
+            <th ng-click="adminControllerModel.order('firstName')" class="nowrap">
+                    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"
+                          ng-show="(adminControllerModel.predicate == 'firstName') && (adminControllerModel.reverse == true)"></span>
+                <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"
+                      ng-show="(adminControllerModel.predicate == 'firstName') && (adminControllerModel.reverse == false)"></span>
+                First Name
+            </th>
+            <th ng-click="adminControllerModel.order('lastName')" class="nowrap">
+                    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"
+                          ng-show="(adminControllerModel.predicate == 'lastName') && (adminControllerModel.reverse == true)"></span>
+                <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"
+                      ng-show="(adminControllerModel.predicate == 'lastName') && (adminControllerModel.reverse == false)"></span>
+                Last Name
+            </th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="forms-input-row">
+            <td>
+                <input type="text" class="form-control" id="username" placeholder="username"
+                       ng-model="adminControllerModel.inputUser.username">
+            </td>
+            <td>
+                <input type="password" class="form-control" id="password" placeholder="password"
+                       ng-model="adminControllerModel.inputUser.password">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                       ng-model="adminControllerModel.inputUser.firstName">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                       ng-model="adminControllerModel.inputUser.lastName">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="role" placeholder="role"
+                       ng-model="adminControllerModel.inputUser.role">
+            </td>
+            <td>
+                <a href="" ng-click="adminControllerModel.add(adminControllerModel.inputUser)"
+                   ng-show="adminControllerModel.selected == -1">
+                    <span class="glyphicon glyphicon-plus plusicon pull-left" aria-hidden="true"></span>
+                </a>
+                <a href="" ng-click="adminControllerModel.update(adminControllerModel.inputUser)"
+                   ng-hide="adminControllerModel.selected == -1"><span
+                        class="glyphicon glyphicon-ok okicon pull-right" aria-hidden="true"></span>
+                </a>
+            </td>
+        </tr>
+        <tr ng-repeat="user in adminControllerModel.users | orderBy:adminControllerModel.predicate:adminControllerModel.reverse">
+            <td>{{user.username}}</td>
+            <td>&nbsp;</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.role}}</td>
+            <td>
+                <a href="" ng-click="adminControllerModel.remove(user)"><span
+                        class="glyphicon glyphicon-remove removeicon pull-left"
+                        aria-hidden="true"></span>
+                </a>
+                <a href="" ng-click="adminControllerModel.select(user)"><span
+                        class="glyphicon glyphicon-cog pencilicon pull-right" aria-hidden="true"></span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
