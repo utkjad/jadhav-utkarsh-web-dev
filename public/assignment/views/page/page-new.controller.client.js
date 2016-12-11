@@ -29,7 +29,7 @@
         init();
 
         function createPage(page) {
-            if (page && page.name) {
+            if (page.name) {
                 PageService
                     .createPage(vm.websiteId, page)
                     .success(function (res) {
@@ -40,7 +40,7 @@
                         vm.alert = "Unable to create page";
                     })
             } else {
-                vm.alert = "Please fill fields to create page";
+                vm.alert = "Please fill name of the page!";
             }
         }
 

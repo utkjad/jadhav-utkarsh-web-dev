@@ -347,9 +347,17 @@ module.exports = function (app, models, security) {
 
     function updateUserByAdmin(req, res) {
         var user = req.user;
+        var change = false;
         if (isAdmin(user)) {
             var newUser = req.body;
-            newUser.password = bcrypt.hashSync(newUser.password);
+            userModel
+                .findUserById(newUser._id)
+                .then(function (gotUser) {
+                    change = !(gotUser.password === newUser.password);
+                });
+            if (change) {
+                newUser.password = bcrypt.hashSync(newUser.password);
+            }
             var newUserId = req.params['uid'];
             userModel
                 .updateUser(newUserId, newUser)

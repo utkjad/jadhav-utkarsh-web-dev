@@ -30,7 +30,7 @@
         return api;
 
         function addMovie(movie) {
-            return $http.post(addMovieUrl, movie);
+            return $http.post(baseUrl, movie);
         }
 
         function findPopularMovies(page) {

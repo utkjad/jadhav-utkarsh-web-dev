@@ -9,21 +9,18 @@
     </div>
 </div>
 
-<div class="row"
-     infinite-scroll="homePopularControllerModel.pagingFunction()"
-     infinite-scroll-disabled='homePopularControllerModel.busy'
-     infinite-scroll-distance="1">
+<div class="row">
     <div ng-repeat="movie in homePopularControllerModel.movies">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail box">
                 <a ui-sref="details({movieId: movie.id})">
                     <div class="caption">
-                        <h4>{{movie.title | limitTo:26}}{{movie.title.length > 26 ? "..." : ""}}</h4>
+                        <h4 class="movie-title">{{movie.title | limitTo:26}}{{movie.title.length > 26 ? "..." : ""}}</h4>
                     </div>
-                    <img class="img-responsive" ng-src="{{movie.imageUrl}}"/>
-                    <div class="caption">
-                        <h5>Release: {{movie.release_date}}</h5>
-                    </div>
+                    <img class="thumbnail-image img-responsive" ng-src="{{movie.imageUrl}}"/>
+                    <!--<div class="caption">-->
+                        <!--<h5>Release: {{movie.release_date}}</h5>-->
+                    <!--</div>-->
                     <hr class="nomargin">
                     <div class="caption">
                         <div class="chip">
@@ -35,3 +32,23 @@
         </div>
     </div>
 </div>
+<nav class="navigation-pagination" aria-label="Page navigation">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" ng-click="homePopularControllerModel.pagingFunctionPrevious()"
+               ng-disabled="homePopularControllerModel.pagenumber===1"
+               aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" ng-click="homePopularControllerModel.pagingFunctionNext()" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+

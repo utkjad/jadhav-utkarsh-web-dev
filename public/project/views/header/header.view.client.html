@@ -1,29 +1,27 @@
-<nav class="navbar navbar-inverse navbar-fixed-top headClass" ng-controller="HeaderController as headerControllerModel">
+<nav class="navbar navbar-fixed-top headClass" ng-controller="HeaderController as headerControllerModel">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
             </button>
             <a class="navbar-brand"
                ng-click="headerControllerModel.toggleMenu()"
                ng-show="isToggleMenuVisible">
                 <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
             </a>
-            <a class="navbar-brand" ng-click="headerControllerModel.home()">BBoB</a>
+            <a id="titlewebsite" class="navbar-brand" ng-click="headerControllerModel.home()">Movie Reviews</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right example">
                 <li ui-sref-active="active" ng-show="!user">
                     <a ui-sref="register" class="visible-xs" data-toggle="collapse" data-target="#navbar">
                         <i class="fa fa-link" aria-hidden="true"></i>
                         Register
                     </a>
-                    <a ui-sref="register" class="hidden-xs">
-                        <i class="fa fa-link" aria-hidden="true"></i>
+                    <a ui-sref="register" class="hidden-xs caption-for-large">
+                        <i class="fa fa-lg fa-link" aria-hidden="true"></i>
                         Register
                     </a>
                 </li>
@@ -32,8 +30,8 @@
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Login
                     </a>
-                    <a ui-sref="login" class="hidden-xs">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    <a ui-sref="login" class="hidden-xs caption-for-large">
+                        <i class="fa fa-lg fa-sign-in" aria-hidden="true"></i>
                         Login
                     </a>
                 </li>
@@ -43,8 +41,8 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
                         Admin
                     </a>
-                    <a ui-sref="admin" class="hidden-xs">
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                    <a ui-sref="admin" class="hidden-xs caption-for-large">
+                        <i class="fa fa-lg fa-user" aria-hidden="true"></i>
                         Admin
                     </a>
                 </li>
@@ -54,7 +52,7 @@
                         <i class="fa fa-cog" aria-hidden="true"></i>
                         {{user.username}}
                     </a>
-                    <a ui-sref="profile.edit-profile({userId: user._id})" class="hidden-xs">
+                    <a ui-sref="profile.edit-profile({userId: user._id})" class="hidden-xs caption-for-large">
                         <i class="fa fa-cog" aria-hidden="true"></i>
                         {{user.username}}
                     </a>
@@ -64,7 +62,7 @@
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                         Logout
                     </a>
-                    <a href="" class="hidden-xs">
+                    <a href="" class="hidden-xs caption-for-large">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                         Logout
                     </a>

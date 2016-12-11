@@ -34,15 +34,20 @@
             }
 
             function updateWidget(widget) {
-                WidgetService
-                    .updateWidget(vm.widgetId, widget)
-                    .success(function (res) {
-                        vm.success = "Widget updated";
-                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
-                    })
-                    .error(function (err) {
-                        vm.alert = "Unable to update Widget";
-                    })
+               if(widget.name){
+                   WidgetService
+                       .updateWidget(vm.widgetId, widget)
+                       .success(function (res) {
+                           vm.success = "Widget updated";
+                           $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
+                       })
+                       .error(function (err) {
+                           vm.alert = "Unable to update Widget";
+                       })
+               }
+               else{
+                   vm.alert = "provide name of the widget";
+               }
             }
 
             function deleteWidget() {

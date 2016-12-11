@@ -14,8 +14,11 @@
             init();
 
             function login (user) {
-                var promise = UserService.login(user);
-                promise
+                if (user.username && user.password){
+
+
+                UserService
+                    .login(user)
                     .success(function (user) {
                         if (user != "0") {
                             $location.url("user"); //TODO
@@ -23,6 +26,18 @@
                             vm.alert = "No such user found!!!";
                         }
                     })
+                    .error(function (user)  {
+                        vm.alert = "cannot find the user"
+                    })
+                }
+                else {
+                    if (!user.username){
+                        vm.alert = "Username cannot be empty"
+                    }
+                    else{
+                        vm.alert = "passowrd cannot be empty!"
+                    }
+                }
             }
 
             function register() {

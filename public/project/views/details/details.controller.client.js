@@ -73,15 +73,6 @@
                     vm.cast = cast;
                 });
 
-            MovieService
-                .getVideoKey(vm.movieId)
-                .then(function (response) {
-                    var videos = response.data.results;
-                    videos.forEach(function (element, index, array) {
-                        element.url = $sce.trustAsResourceUrl(MovieService.getYoutubeEmbed(element.key));
-                    });
-                    vm.videos = videos;
-                });
 
             movieDetailsForMovieId();
         }
@@ -110,7 +101,7 @@
                         movie.imageUrl = vm.imageUrl + movie.backdrop_path;
                     }
                     else {
-                        movie.imageUrl = "/project/images/image-not-available.png";
+                        movie.imageUrl = "/project/images/Photo-not-available.png";
                     }
 
                     vm.movie = movie;

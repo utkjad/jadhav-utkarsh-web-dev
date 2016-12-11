@@ -8,12 +8,11 @@
 
         var vm = this;
         vm.movieTitle = $stateParams.movieTitle;
-
-        vm.pagingFunction = pagingFunction;
+        vm.pagingFunctionNext = pagingFunctionNext;
+        vm.pagingFunctionPrevious = pagingFunctionPrevious;
 
         function init() {
-            vm.pagination = 1;
-
+            vm.pagenumber = 1;
             if (vm.movieTitle) {
                 getMoviesByTitle();
             }
@@ -22,7 +21,7 @@
 
         function getMoviesByTitle() {
             MovieService
-                .getMoviesByTitle(vm.movieTitle, vm.pagination)
+                .getMoviesByTitle(vm.movieTitle, vm.pagenumber)
                 .then(function (response) {
                     var movies = $scope.homeControllerModel.preprocess(response.data);
                     if (movies.length != 0) {
@@ -36,22 +35,33 @@
                 });
         }
 
-        function pagingFunction() {
-            if (vm.pagination === 1) {
-                vm.pagination++;
-            } else {
-                vm.busy = true;
-                MovieService
-                    .getMoviesByTitle(vm.movieTitle, vm.pagination)
-                    .then(function (response) {
-                        var movies = $scope.homeControllerModel.preprocess(response.data);
-                        if (movies.length != 0) {
-                            vm.movies.push.apply(vm.movies, movies);
-                            vm.busy = false;
-                        }
-                    });
-                vm.pagination++;
+        function pagingFunctionNext() {
+            vm.pagenumber++;
+            MovieService
+                .findPopularMovies(vm.pagenumber)
+                .then(function (response) {
+                    var movies = $scope.homeControllerModel.preprocess(response.data);
+                    if (movies.length != 0) {
+                        vm.movies = movies;
+                    }
+                });
+        }
+
+        function pagingFunctionPrevious() {
+            if (vm.pagenumber === 1){
+
             }
+            else{
+                vm.pagenumber--;
+            }
+            MovieService
+                .findPopularMovies(vm.pagenumber)
+                .then(function (response) {
+                    var movies = $scope.homeControllerModel.preprocess(response.data);
+                    if (movies.length != 0) {
+                        vm.movies = movies;
+                    }
+                });
         }
 
     }

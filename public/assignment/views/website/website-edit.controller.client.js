@@ -53,15 +53,21 @@
         }
 
         function updateWebsite(website) {
-            WebsiteService
-                .updateWebsite(vm.websiteId, website)
-                .success(function (res) {
-                    vm.success = "Website updated successfully.";
-                    $location.url("/user/" + vm.userId + "/website");
-                })
-                .error(function (err) {
-                    vm.alert = "cannot update website";
-                })
+            if (website.name){
+                WebsiteService
+                    .updateWebsite(vm.websiteId, website)
+                    .success(function (res) {
+                        vm.success = "Website updated successfully.";
+                        $location.url("/user/" + vm.userId + "/website");
+                    })
+                    .error(function (err) {
+                        vm.alert = "cannot update website";
+                    })
+            }
+            else{
+                vm.alert = "Please Specify name of the website!"
+            }
+
         }
 
         function back() {

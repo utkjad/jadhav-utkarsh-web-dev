@@ -1,4 +1,11 @@
 @media (max-width: 767px) {
+    ul.pagination li a {
+        font-size: large;
+    }
+
+    .pitch{
+        display: none;
+    }
     .search-box {
         height: 30px;
         padding: 5px 10px;
@@ -27,6 +34,22 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    ul.pagination li a {
+        font-size: 20px;
+    }
+
+    #titlewebsite{
+        font-size: 30px;
+    }
+    .navbar{
+        height: 10%;
+    }
+
+    .pitch{
+        font-family: 'Poiret One', cursive;
+        font-size: large;
+        color:#7b080c;
+    }
     .search-box {
         height: 46px;
         padding: 10px 16px;
@@ -55,6 +78,20 @@
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    ul.pagination li a {
+        font-size: 20px;
+    }
+    #titlewebsite{
+        font-size: 30px;
+    }
+    .navbar{
+        height: 10%;
+    }
+
+    .pitch{
+        font-family: 'Poiret One', cursive;
+        color:#7b080c;
+    }
     .search-box {
         height: 46px;
         padding: 10px 16px;
@@ -79,6 +116,18 @@
 }
 
 @media (min-width: 1200px) {
+    ul.pagination li a {
+        font-size: 30px;
+    }
+
+    #titlewebsite{
+        font-size: 30px;
+    }
+
+    .pitch{
+        font-family: 'Poiret One', cursive;
+        color:#7b080c;
+    }
     .search-box {
         height: 46px;
         padding: 10px 16px;
@@ -102,8 +151,11 @@
     }
 }
 
+/*
+Following are common attributes through out
+*/
 body {
-    background-color: #e1e1e1;
+    background-color: #FFFFFF;
 }
 
 .div-login, .div-register, .div-forgot-password {
@@ -121,12 +173,6 @@ body {
     margin-bottom: 20px;
 }
 
-.btn-search {
-    color: white;
-    background-color: #337ab7;
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
-}
-
 .instructions {
     color: #777;
 }
@@ -136,6 +182,7 @@ body {
 }
 
 .h3-page-header {
+    font-family: 'Cabin', sans-serif;
     margin: 0px 0 20px;
 }
 
@@ -147,10 +194,6 @@ body {
     margin: 0px;
 }
 
-.orange {
-    color: #FFA500;
-}
-
 .green {
     color: #008000;
 }
@@ -160,15 +203,6 @@ body {
     max-width: 100px;
 }
 
-#myCarousel {
-    margin-top: 15px;
-    margin-bottom: 30px;
-    box-shadow: 0px 0px 28px 5px rgba(0, 0, 0, 0.6);
-}
-
-#mySearchBox {
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
-}
 
 #myBrand {
     text-shadow: 4px 4px 4px rgba(60, 60, 60, 0.8);
@@ -249,29 +283,123 @@ body {
     vertical-align: middle;
 }
 
-.box {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
-}
-
 .box:hover {
-    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.6);
+    border-color: #7b080c;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(123, 8, 12, 0.5);
 }
-
+.thumbnail{
+    border: solid 1px #7b080c;
+}
 .chip {
     display: inline-block;
     padding: 0 25px;
-    border-radius: 25px;
-    background-color: #a4a4a4;
-}
-
-.details {
-    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.5);
-}
-
-.headClass {
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.6);
+    color:#7b080c;
 }
 
 a:hover {
     text-decoration: none;
+}
+
+.headClass{
+    background-color: #7b080c;
+}
+
+
+#titlewebsite{
+    font-weight:bold;
+    font-family: 'Poiret One', cursive;
+}
+#titlewebsite:hover{
+    color:white;
+}
+
+
+.movie-title {
+    text-align: center;
+    color:#7b080c;
+}
+.movie-title:hover {
+    font-style: italic;
+}
+.caption{
+    text-align: center;
+}
+
+.similar-movies-caption{
+    color:#7b080c;
+}
+
+.caption-for-large{
+    font-size:large;
+}
+
+
+
+
+
+
+/*********************************/
+/*Search Box and related Buttons*/
+/********************************/
+.btn-search {
+    border-color: #7b080c;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(123, 8, 12, 0.5);
+}
+.btn-search:hover{
+    background-color: #7b080c;
+}
+
+.input-group:hover glyphicon{
+    color: white;
+}
+#mySearchBox {
+    border-color: #7b080c;
+    /*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(123, 8, 12, 0.5);*!*/
+}
+
+#mySearchBox :active{
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(123, 8, 12, 0.5);
+}
+
+
+/*********************************/
+/*NAVBAR and related*/
+/********************************/
+
+.navbar-brand{
+    color: white;
+}
+
+.navbar-brand :hover{
+    color: white;
+}
+.navbar a{
+    color:white;
+}
+.navbar a:hover{
+    color:#7b080c;
+}
+.navbar-toggle{
+    color:white;
+}
+.navbar ul li {
+    font-weight:bold;
+    font-family: 'Poiret One', cursive;
+}
+
+/*********************************/
+/* Page navigation common*/
+/********************************/
+
+ul.pagination li a {
+    color:#7b080c;
+}
+
+ul.pagination li a:hover{
+    background-color: #7b080c;
+    color: white;
+}
+
+div.xyz {
+    text-align:center;
 }

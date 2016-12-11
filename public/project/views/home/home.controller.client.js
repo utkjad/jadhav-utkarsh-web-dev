@@ -7,17 +7,10 @@
     function HomeController($state, MovieService) {
 
         var vm = this;
-        vm.slides = [];
-
-        vm.slide = slide;
         vm.eventHandler = eventHandler;
         vm.preprocess = preprocess;
 
         function init() {
-            $('#myCarousel').carousel({
-                interval: 3500
-            });
-
             var imageUrl = MovieService.getImageUrl();
             vm.imageUrl = imageUrl.substring(0, imageUrl.length - 1);
 
@@ -31,22 +24,8 @@
                     vm.genreList = map;
                 });
 
-            MovieService
-                .findUpcomingMovies()
-                .then(function (response) {
-                    response.data.results.forEach(function (element1, index1, array1) {
-                        if (element1.backdrop_path) {
-                            element1.imageUrl = vm.imageUrl + element1.backdrop_path;
-                            vm.slides.push(element1);
-                        }
-                    });
-                });
         }
         init();
-
-        function slide(dir) {
-            $('#myCarousel').carousel(dir);
-        }
 
         function preprocess(data) {
             var result = [];

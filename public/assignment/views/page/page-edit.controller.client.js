@@ -40,15 +40,20 @@
         init();
 
         function updatePage(page) {
-            PageService
-                .updatePage(vm.pageId, page)
-                .success(function (page) {
-                    vm.success = "Page updated";
-                    $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
-                })
-                .error(function (err) {
-                    vm.alert = "cannot update page";
-                })
+            if (page.name){
+                PageService
+                    .updatePage(vm.pageId, page)
+                    .success(function (page) {
+                        vm.success = "Page updated";
+                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+                    })
+                    .error(function (err) {
+                        vm.alert = "cannot update page";
+                    })
+            }
+            else {
+                vm.alert = "Please provide page name!"
+            }
         }
 
         function deletePage(page) {
