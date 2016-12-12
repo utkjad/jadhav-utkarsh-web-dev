@@ -1,4 +1,5 @@
 .marathi {
+    opacity: 0.8;
     font-family: 'Yatra One', cursive;
     font-size: 2em;
     color: #7b080c;
@@ -12,6 +13,7 @@
 
 @media (min-width: 768px) {
     .marathi {
+        opacity: 0.8;
         font-family: 'Yatra One', cursive;
         font-size: 4em;
         color: #7b080c;

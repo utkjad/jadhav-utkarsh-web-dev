@@ -16,10 +16,11 @@ Sidebar
         display: block;
         height: 100%;
         padding-right: 0;
+        padding-left: 0;
     }
 
     .sidebar ul {
-        padding-left: 20px;
+        padding-left: 0px;
         margin-top: 10px;
     }
 

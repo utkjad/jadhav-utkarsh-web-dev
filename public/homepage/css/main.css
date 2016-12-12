@@ -1,28 +1,64 @@
-body {
-    padding-top: 60px;
+.mobile-menu ul {
+    padding-top: 20px;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: medium;
+    display: block;
+    height: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.mobile-menu ul li {
+    list-style-type: none;
+    margin: 0;
+}
+
+.mobile-menu ul li a {
+    padding-right: 0;
+    padding-left: 0;
+    color: #111;
+    display: inline-block;
+    width: 93%;
+    line-height: 2.5em;
+    background-image: url(dot.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+}
+.mobile-menu ul li a:hover {
+    color: #7b080c;
+    display: inline-block;
+    width: 93%;
+    line-height: 2.5em;
+    background-image: url(dot_maroon.png);
+    background-repeat: repeat-x;
+    background-position: 100% 61%;
+    background-size: 4px;
+    opacity: 1;
+
+}
+
+.mobile-menu ul li a span {
     background-color: #FDFDFD;
 }
 
-.navbar {
-    padding: 0 0 0 0;
-    position: fixed;
-    line-height: 60px;
-    text-align: center;
-    background-color: #FBA519;
-    border-bottom: solid;
-    border-bottom-width: 1px;
-    border-color: #7b080c;
-}
-
-.navbar-collapse {
-    display: block !important;
-}
-
-.navbar-header {
+.mobile-header.navbar-brand.navbar-text {
+    opacity: 0.8;
     float: left;
-    width: 70%;
+    font-family: 'Righteous', serif;
+    font-size: 2em;
+    color: #7b080c;
+
 }
-.navbar-brand {
+
+.mobile-header.navbar, .mobile-header.navbar-inverse {
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    min-height: 80px;
+}
+.mobile-header .first-name{
     opacity: 0.8;
     float: none;
     font-family: 'Righteous', serif;
@@ -30,27 +66,65 @@ body {
     color: #7b080c;
 }
 
+.mobile-header{
+    display: block;
+}
+.non-mobile{
+    display: none;
+}
+
+
+.nav li {
+    display: inline;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 1.7em;
+    font-weight: 300;
+    padding: 30px 25px 33px 25px;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+    background-color: #444444;
+    transition: 0.7s all linear;
+    height: 100%;
+}
+
 .inverse-sidebar {
     font-family: 'Gentium Book Basic', serif;
     font-size: medium;
     color: black;
     text-align: justify;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
     margin-bottom: 15px;
 }
 
+.navbar-toggle.collapsed{
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+}
+.fa-bars{
+    color: #7b080c;
+    opacity: 0.8;
+}
 @media (min-width: 768px) {
+    .container-fluid{
+        padding-right: 0px;
+    }
+    .mobile-header{
+        display: none;
+    }
+    .non-mobile{
+        display: block;
+    }
     body {
         padding-top: 120px;
         margin-left: 10%;
         margin-right: 10%;
         background-color: #FDFDFD;
-    }
-
-    .navbar-collapse.collapse {
-        display: none !important;
     }
     .navbar {
         margin-left: 10%;
@@ -64,9 +138,8 @@ body {
     }
 
     .navbar-header {
-        background-color: #FBA519;
         float: left;
-        width: 100%;
+        width:100%;
     }
 
     .navbar-brand {
@@ -77,19 +150,23 @@ body {
         color: #7b080c;
 
     }
+    .inverse-ele{
+        padding-top: 20px;
+        padding-right:0px;
+    }
 
     .inverse-sidebar {
         font-family: 'Gentium Book Basic', serif;
         font-size: medium;
         color: black;
         text-align: justify;
-        padding-top: 40px;
-        padding-left: 40px;
-        padding-right: 40px;
         overflow-y: scroll;
         margin-bottom: 40px;
     }
 
+    .row-class{
+        margin-left: 0;
+    }
     .fa-lg {
         vertical-align: 0;
     }
