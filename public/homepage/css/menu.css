@@ -7,6 +7,7 @@ Sidebar
 
 @media (min-width: 768px) {
     .sidebar {
+        float:left;
         padding-top: 20px;
         border-right: solid 2px;
         border-color: #7b080c;
